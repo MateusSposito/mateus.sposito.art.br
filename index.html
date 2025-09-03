@@ -3,64 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossa Família</title>
+    <title>Mateus Sposito - Miniaturas Artísticas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: #f0f2f5;
             color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
-            text-align: center;
         }
         .container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 90%;
-            transition: transform 0.3s ease-in-out;
+            max-width: 900px;
         }
-        .container:hover {
-            transform: translateY(-5px);
-        }
-        h1 {
-            color: #0056b3;
-            margin-bottom: 10px;
+        .section-title {
+            position: relative;
             font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a237e;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        p {
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #ffc107;
+            margin-top: 8px;
+            border-radius: 2px;
         }
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #007bff;
-            color: #ffffff;
-            text-decoration: none;
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+        }
+        .gallery img {
+            object-fit: cover;
+            width: 100%;
+            height: 250px;
             border-radius: 8px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
-        .button:hover {
-            background-color: #0056b3;
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Bem-vindos à nossa casa virtual!</h1>
-        <p>Esta é a página da nossa família, um lugar para compartilharmos nossas histórias, fotos e momentos especiais. Estamos felizes por você estar aqui.</p>
-        <p>Fique à vontade para explorar e entrar em contato.</p>
-        <a href="mailto:contato@seufamilia.com" class="button">Fale Conosco</a>
-    </div>
+<body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
+
+    <!-- Header Section -->
+    <header class="w-full flex justify-center py-6 mb-12">
+        <div class="flex items-center space-x-4">
+            <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15v-5H8v5h3zm4-5h-3v5h3v-5zM12 5a2 2 0 012 2v2H10V7a2 2 0 012-2z"/>
+            </svg>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900">Mateus Sposito</h1>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="w-full flex justify-center mb-10">
+        <div class="flex space-x-6 text-xl">
+            <a href="index.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Início</a>
+            <a href="sobre-mim.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Sobre Mim</a>
+            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="w-full container">
+        
+        <!-- Hero and About Section -->
+        <section class="mb-16">
+            <div class="card p-8 md:p-10 flex flex-col items-center">
+                <img src="assets/IMG-20250814-WA0013.jpg" alt="Foto de Mateus Sposito" class="w-48 h-48 rounded-full mb-6 object-cover shadow-lg">
+                <h2 class="section-title text-center mb-8">Sobre Mim</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6 text-center">
+                    Da animação 3D ao toque artesanal em resina, minha jornada é uma fusão de tecnologia e arte. Hoje, transformo memórias em miniaturas personalizadas, com um trabalho focado na eternização de momentos e pessoas.
+                </p>
+                <a href="sobre-mim.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Leia minha história completa
+                </a>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="portfolio" class="mb-16">
+            <h2 class="section-title text-center mb-10">Miniaturas</h2>
+            <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card overflow-hidden">
+                    <img src="assets/Miniaturas01_WBG.jpg" alt="Miniaturas de resina" class="w-full">
+                </div>
+                <div class="card overflow-hidden">
+                    <img src="assets/Elson.jpg" alt="Miniatura de Elson" class="w-full">
+                </div>
+                <div class="card overflow-hidden">
+                    <img src="assets/Bete.jpg" alt="Miniatura de Bete" class="w-full">
+                </div>
+                <div class="card overflow-hidden">
+                    <img src="assets/Lara.jpg" alt="Miniatura de Lara" class="w-full">
+                </div>
+                <div class="card overflow-hidden">
+                    <img src="assets/Regina.jpg" alt="Miniatura de Regina" class="w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="mb-16">
+            <div class="card p-8 md:p-10 text-center">
+                <h2 class="section-title text-center mb-8">Entre em Contato</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Enviar E-mail
+                    </a>
+                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Visitar Loja
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full text-center py-6 text-gray-500 text-sm">
+        <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
+    </footer>
+
 </body>
 </html>
+
