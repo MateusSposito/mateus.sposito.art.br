@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Obras - Mateus Sposito</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .section-title {
+            position: relative;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a237e;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #ffc107;
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+        }
+        .gallery a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        .gallery img {
+            object-fit: cover;
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
+
+    <!-- Header Section -->
+    <header class="w-full flex justify-center py-6 mb-12">
+        <div class="flex items-center space-x-4">
+            <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15v-5H8v5h3zm4-5h-3v5h3v-5zM12 5a2 2 0 012 2v2H10V7a2 2 0 012-2z"/>
+            </svg>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900">Mateus Sposito</h1>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="w-full flex justify-center mb-10">
+        <div class="flex space-x-6 text-xl">
+            <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
+            <a href="catalogo.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Catálogo</a>
+            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="w-full container">
+        
+        <!-- Catalog Section -->
+        <section id="catalogo" class="mb-16">
+            <h2 class="section-title text-center mb-10">Catálogo de Obras</h2>
+            <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Obra: Capivara Tomando Café -->
+                <a href="capivara.html" class="card overflow-hidden">
+                    <img src="assets/20250919_131146.jpg" alt="Escultura da Capivara Tomando Café">
+                    <div class="p-4 text-center">
+                        <h3 class="text-xl font-semibold text-blue-800">Capivara Tomando Café</h3>
+                        <p class="text-sm text-gray-500">Coleção Memes Materializados</p>
+                    </div>
+                </a>
+
+                <!-- Adicione novas obras aqui, seguindo o mesmo padrão -->
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="mb-16">
+            <div class="card p-8 md:p-10 text-center">
+                <h2 class="section-title text-center mb-8">Entre em Contato</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Enviar E-mail
+                    </a>
+                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Visitar Loja
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full text-center py-6 text-gray-500 text-sm">
+        <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
+    </footer>
+
+</body>
+</html>
