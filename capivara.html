@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capivara Tomando Café - Catálogo de Obras</title>
+    <title>Capivara Tomando Café - Mateus Sposito</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -42,16 +42,24 @@
             transform: translateY(-8px);
             box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
         }
-        .gallery-item img, .gallery-item video {
-            object-fit: contain;
+        .gallery img {
+            object-fit: cover;
             width: 100%;
-            height: auto;
+            height: 100%;
             border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .aspect-square {
+            aspect-ratio: 1 / 1;
+        }
+        .video-container {
+            width: 100%;
+            max-width: 560px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -71,6 +79,7 @@
     <nav class="w-full flex justify-center mb-10">
         <div class="flex space-x-6 text-xl">
             <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
+            <a href="catalogo.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Catálogo</a>
             <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
         </div>
     </nav>
@@ -78,62 +87,61 @@
     <!-- Main Content -->
     <main class="w-full container">
         
-        <!-- Artwork Details Section -->
+        <!-- Obra Details Section -->
         <section class="mb-16">
-            <div class="card p-8 md:p-10 flex flex-col items-center">
-                <h2 class="section-title text-center mb-6">Capivara Tomando Café</h2>
+            <div class="card p-8 md:p-10 text-center">
+                <h2 class="section-title text-center mb-8">Capivara Tomando Café</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Esta miniatura faz parte da coleção "Memes Materializados", uma série de peças que transformam ícones da internet em obras de arte física.
+                </p>
                 
-                <!-- Image Gallery -->
-                <div class="gallery-grid mb-8 w-full">
-                    <div class="gallery-item">
-                        <img src="assets/20250919_131146.jpg" alt="Escultura de Capivara Tomando Café">
+                <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Ordem cronológica -->
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/1756991833298.jpg" alt="Render 3D da Capivara">
                     </div>
-                    <div class="gallery-item">
-                        <img src="assets/1756991833298.jpg" alt="Referência da Capivara">
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250910_141932.jpg" alt="Miniaturas de resina na máquina 3D">
                     </div>
-                    <div class="gallery-item">
-                        <img src="assets/20250917_140052.jpg" alt="Detalhe da pintura da Capivara">
+                    <div class="card overflow-hidden aspect-square">
+                        <video controls class="rounded-xl shadow-lg w-full h-full object-cover">
+                            <source src="assets/20250910_163228.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
                     </div>
-                    <div class="gallery-item">
-                        <img src="assets/20250918_110556.jpg" alt="Grupo de Capivaras">
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250910_181020.jpg" alt="Versão em resina branca da Capivara">
                     </div>
-                    <div class="gallery-item">
-                        <img src="assets/20250912_132223.jpg" alt="Capivaras antes de pintar">
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250912_071127.jpg" alt="Miniatura em resina branca na mão">
                     </div>
-                    <div class="gallery-item">
-                        <img src="assets/20250912_071127.jpg" alt="Capivara em resina transparente">
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250912_132223.jpg" alt="Miniaturas sem pintura">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250915_201119.jpg" alt="Miniaturas embaladas">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250917_140052.jpg" alt="Miniatura em processo de pintura">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250918_110556.jpg" alt="Três miniaturas pintadas">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250919_114022.jpg" alt="Detalhe de um rosto de miniatura">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250919_131146.jpg" alt="Miniatura finalizada na mão">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250919_131042.jpg" alt="Miniatura finalizada na base verde">
                     </div>
                 </div>
 
-                <!-- Video Showcase -->
-                <div class="w-full mb-8">
-                    <video controls class="w-full rounded-xl shadow-lg">
-                        <source src="assets/20250910_163228.mp4" type="video/mp4">
-                        Seu navegador não suporta a tag de vídeo.
-                    </video>
-                </div>
-                
-                <!-- Text and Details -->
-                <div class="w-full max-w-lg text-left">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-800">Sobre a Obra</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Criada entre agosto e setembro de 2025, esta escultura de resina foi inspirada em memes que minha esposa, Regina, me enviava. É a primeira peça da coleção "Memes Materializados", uma série que busca dar vida a ícones da internet. A ideia é transformar o humor digital em algo palpável, começando com a clássica imagem da capivara sonolenta, mas que não abre mão do seu café.
-                    </p>
-                    <h4 class="text-xl font-semibold mb-2 text-blue-800">Detalhes Técnicos</h4>
-                    <ul class="text-lg text-gray-600 space-y-2">
-                        <li><strong>Materiais:</strong> Resina impressa em 3D e pintura acrílica.</li>
-                        <li><strong>Medidas:</strong> A definir.</li>
-                        <li><strong>Peso:</strong> A definir.</li>
-                        <li><strong>Data de criação:</strong> Setembro de 2025.</li>
-                    </ul>
-                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="block w-full text-center mt-8 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-                        Ver no Mercado Livre
-                    </a>
-                </div>
             </div>
         </section>
 
-        <!-- Contact Section (same as before) -->
+        <!-- Contact Section -->
         <section id="contato" class="mb-16">
             <div class="card p-8 md:p-10 text-center">
                 <h2 class="section-title text-center mb-8">Entre em Contato</h2>
@@ -150,6 +158,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
