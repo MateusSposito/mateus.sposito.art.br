@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capivara Tomando Café - Catálogo de Obras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .section-title {
+            position: relative;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a237e;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #ffc107;
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+        }
+        .gallery-item img, .gallery-item video {
+            object-fit: contain;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
+
+    <!-- Header Section -->
+    <header class="w-full flex justify-center py-6 mb-12">
+        <div class="flex items-center space-x-4">
+            <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15v-5H8v5h3zm4-5h-3v5h3v-5zM12 5a2 2 0 012 2v2H10V7a2 2 0 012-2z"/>
+            </svg>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900">Mateus Sposito</h1>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="w-full flex justify-center mb-10">
+        <div class="flex space-x-6 text-xl">
+            <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
+            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="w-full container">
+        
+        <!-- Artwork Details Section -->
+        <section class="mb-16">
+            <div class="card p-8 md:p-10 flex flex-col items-center">
+                <h2 class="section-title text-center mb-6">Capivara Tomando Café</h2>
+                
+                <!-- Image Gallery -->
+                <div class="gallery-grid mb-8 w-full">
+                    <div class="gallery-item">
+                        <img src="assets/20250919_131146.jpg" alt="Escultura de Capivara Tomando Café">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/1756991833298.jpg" alt="Referência da Capivara">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/20250917_140052.jpg" alt="Detalhe da pintura da Capivara">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/20250918_110556.jpg" alt="Grupo de Capivaras">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/20250912_132223.jpg" alt="Capivaras antes de pintar">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/20250912_071127.jpg" alt="Capivara em resina transparente">
+                    </div>
+                </div>
+
+                <!-- Video Showcase -->
+                <div class="w-full mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-center text-blue-800">Assista o vídeo</h3>
+                    <video controls class="w-full rounded-xl shadow-lg">
+                        <source src="assets/20250910_163228.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                </div>
+                
+                <!-- Text and Details -->
+                <div class="w-full max-w-lg text-left">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-800">Sobre a Obra</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Criada entre agosto e setembro de 2025, esta escultura de resina foi inspirada em memes que minha esposa, Regina, me enviava. É a primeira peça da coleção "Memes Materializados", uma série que busca dar vida a ícones da internet. A ideia é transformar o humor digital em algo palpável, começando com a clássica imagem da capivara sonolenta, mas que não abre mão do seu café.
+                    </p>
+                    <h4 class="text-xl font-semibold mb-2 text-blue-800">Detalhes Técnicos</h4>
+                    <ul class="text-lg text-gray-600 space-y-2">
+                        <li><strong>Materiais:</strong> Resina impressa em 3D e pintura acrílica.</li>
+                        <li><strong>Medidas:</strong> A definir.</li>
+                        <li><strong>Peso:</strong> A definir.</li>
+                        <li><strong>Data de criação:</strong> Setembro de 2025.</li>
+                    </ul>
+                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="block w-full text-center mt-8 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Ver no Mercado Livre
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (same as before) -->
+        <section id="contato" class="mb-16">
+            <div class="card p-8 md:p-10 text-center">
+                <h2 class="section-title text-center mb-8">Entre em Contato</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Enviar E-mail
+                    </a>
+                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Visitar Loja
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full text-center py-6 text-gray-500 text-sm">
+        <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
+    </footer>
+
+</body>
+</html>
