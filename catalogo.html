@@ -53,6 +53,9 @@
         .gallery img:hover {
             transform: scale(1.05);
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
@@ -85,10 +88,10 @@
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Miniaturas mais recentes na categoria -->
                 <a href="luciana-jarbas.html" class="card overflow-hidden">
-                    <img src="assets/Luciana.png" alt="Miniatura de Luciana e Jarbas" class="w-full">
+                    <img src="assets/20250919_185353.jpg" alt="Miniatura de Luciana e Jarbas" class="w-full" onclick="openModal(this.src)">
                 </a>
                 <a href="#" class="card overflow-hidden">
-                    <img src="assets/Regina.jpg" alt="Miniatura de Regina" class="w-full">
+                    <img src="assets/Regina.jpg" alt="Miniatura de Regina" class="w-full" onclick="openModal(this.src)">
                 </a>
                 <!-- Link para ver o catálogo completo -->
                 <a href="caricaturas.html" class="card overflow-hidden bg-blue-100 flex items-center justify-center p-4 text-center text-blue-800 font-semibold text-lg hover:bg-blue-200 transition-colors duration-300">
@@ -102,7 +105,7 @@
             <h2 class="section-title text-center mb-10">Memes</h2>
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <a href="capivara-cafe.html" class="card overflow-hidden">
-                    <img src="assets/20250919_131042.jpg" alt="Escultura da Capivara Tomando Café" class="w-full">
+                    <img src="assets/20250919_131042.jpg" alt="Escultura da Capivara Tomando Café" class="w-full" onclick="openModal(this.src)">
                 </a>
             </div>
         </section>
@@ -112,7 +115,7 @@
             <h2 class="section-title text-center mb-10">Estilo Próprio</h2>
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <a href="capivara-lendo.html" class="card overflow-hidden">
-                    <img src="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="w-full">
+                    <img src="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="w-full" onclick="openModal(this.src)">
                 </a>
             </div>
         </section>
@@ -136,6 +139,33 @@
         </section>
 
     </main>
+
+    <!-- Modal para visualização de imagem em tela cheia -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 hidden">
+        <img id="fullImage" src="" alt="Imagem ampliada" class="max-w-full max-h-full rounded-lg shadow-xl cursor-pointer">
+        <button id="closeModal" class="absolute top-4 right-4 text-white text-4xl font-light hover:text-gray-300 transition-colors">&times;</button>
+    </div>
+
+    <!-- JavaScript para a funcionalidade do modal -->
+    <script>
+        // Função para abrir o modal com a imagem clicada
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const fullImage = document.getElementById('fullImage');
+            fullImage.src = imageSrc;
+            modal.classList.remove('hidden');
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+        }
+
+        // Event listener para fechar o modal ao clicar no botão "x" ou na imagem em tela cheia
+        document.getElementById('closeModal').onclick = closeModal;
+        document.getElementById('fullImage').onclick = closeModal;
+    </script>
 
     <!-- Footer -->
     <footer class="w-full text-center py-6 text-gray-500 text-sm">
