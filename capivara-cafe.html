@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capivara Tomando Café - Meme</title>
+    <title>Capivara Tomando Café - Mateus Sposito</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -36,62 +36,29 @@
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
         }
         .gallery img {
             object-fit: cover;
             width: 100%;
-            height: 250px;
+            height: 100%;
             border-radius: 8px;
-            cursor: pointer;
             transition: transform 0.3s ease;
         }
         .gallery img:hover {
             transform: scale(1.05);
         }
-        /* Modal for full-screen image view */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
+        .aspect-square {
+            aspect-ratio: 1 / 1;
+        }
+        .video-container {
             width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-        .modal-content, .modal-caption {
-            animation-name: zoom;
-            animation-duration: 0.6s;
-        }
-        @keyframes zoom {
-            from {transform:scale(0)} 
-            to {transform:scale(1)}
-        }
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .close-btn:hover,
-        .close-btn:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
+            max-width: 560px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -111,7 +78,7 @@
     <nav class="w-full flex justify-center mb-10">
         <div class="flex space-x-6 text-xl">
             <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
-            <a href="catalogo.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Catálogo</a>
+            <a href="catalogo.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Catálogo</a>
             <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
         </div>
     </nav>
@@ -119,78 +86,100 @@
     <!-- Main Content -->
     <main class="w-full container">
         
-        <!-- Detalhes da Miniatura -->
+        <!-- Obra Details Section -->
         <section class="mb-16">
-            <div class="card p-8 md:p-10">
-                <h2 class="section-title text-center mb-6">Capivara Tomando Café</h2>
-                <div class="flex flex-col md:flex-row items-center md:items-start md:space-x-8 mb-8">
-                    <img src="assets/20250919_131042.jpg" alt="Escultura da Capivara Tomando Café" class="w-full md:w-1/2 rounded-lg mb-6 md:mb-0 shadow-lg" onclick="openModal(this.src)">
-                    <div class="text-lg text-gray-700 space-y-4">
-                        <p class="font-bold">Tema:</p>
-                        <p>Meme</p>
-                        <p class="font-bold">Dimensões:</p>
-                        <p>15cm x 10cm x 8cm</p>
-                        <p class="font-bold">Materiais:</p>
-                        <p>Resina UV, tinta acrílica e acabamento fosco</p>
-                        <p class="font-bold">Data de Criação:</p>
-                        <p>Setembro de 2025</p>
+            <div class="card p-8 md:p-10 text-center">
+                <h2 class="section-title text-center mb-8">Capivara Tomando Café</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Esta miniatura faz parte da coleção "Memes Materializados", uma série de peças que transformam ícones da internet em obras de arte física. A Capivara Tomando Café foi inspirado em um meme muito enviado pela minha esposa, Regina. Foi criada e finalizada entre agosto e setembro de 2025. Aguardem que muitos ainda virão!
+                </p>
+
+                <!-- Dados Técnicos -->
+                <div class="my-8 text-left">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Detalhes Técnicos</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><span class="font-semibold">Medidas:</span> 7.8 cm x 7.8 cm x 12 cm (Comprimento x Largura x Altura)</li>
+                        <li><span class="font-semibold">Peso:</span> 310g (maciça)</li>
+                        <li><span class="font-semibold">Produção:</span> de agosto a setembro de 2025</li>
+                        <li><span class="font-semibold">Materiais:</span> Resina UV, resina epóxi, resina poliéster e calcita.</li>
+                        <li><span class="font-semibold">Acabamento:</span> Pintada com tinta acrílica e envernizada com verniz acrílico brilhante.</li>
+                    </ul>
+                </div>
+                
+                <!-- Etapas de Criação -->
+                <div class="my-8 text-left">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Etapas de Criação</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6 text-center">
+                        Da criação digital à peça finalizada, um resumo do processo artesanal:
+                    </p>
+                </div>
+                
+                <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Ordem cronológica -->
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/1756991833298.jpg" alt="Render 3D da Capivara">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250910_141932.jpg" alt="Miniaturas de resina na máquina 3D">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <video controls class="rounded-xl shadow-lg w-full h-full object-cover">
+                            <source src="assets/20250910_163228.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250910_181020.jpg" alt="Versão em resina branca da Capivara">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250912_071127.jpg" alt="Miniatura em resina branca na mão">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250912_132223.jpg" alt="Miniaturas sem pintura">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250915_201119.jpg" alt="Miniaturas embaladas">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250917_140052.jpg" alt="Miniatura em processo de pintura">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250918_110556.jpg" alt="Três miniaturas pintadas">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250919_114022.jpg" alt="Detalhe de um rosto de miniatura">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250919_131146.jpg" alt="Miniatura finalizada na mão">
+                    </div>
+                    <div class="card overflow-hidden aspect-square">
+                        <img src="assets/20250919_131042.jpg" alt="Miniatura finalizada na base verde">
                     </div>
                 </div>
-                <p class="text-lg text-gray-700 leading-relaxed text-center">
-                    Uma miniatura divertida baseada em um dos memes mais populares da internet, a Capivara Tomando Café. A peça captura a essência do meme e traz um toque de humor para a sua coleção.
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="mb-16">
+            <div class="card p-8 md:p-10 text-center">
+                <h2 class="section-title text-center mb-8">Entre em Contato</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
                 </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Enviar E-mail
+                    </a>
+                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Visitar Loja
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- Galeria do Processo de Criação -->
-        <section class="mb-16">
-            <h2 class="section-title text-center mb-10">Galeria</h2>
-            <div class="gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <img src="assets/20250919_131042.jpg" alt="Capivara Tomando Café - vista frontal" class="w-full h-auto rounded-lg shadow-md" onclick="openModal(this.src)">
-                <img src="assets/20250919_114022.jpg" alt="Capivara Tomando Café - vista lateral" class="w-full h-auto rounded-lg shadow-md" onclick="openModal(this.src)">
-                <img src="assets/20250918_110556.jpg" alt="Capivara Tomando Café - detalhe" class="w-full h-auto rounded-lg shadow-md" onclick="openModal(this.src)">
-                <img src="assets/20250919_131146.jpg" alt="Capivara Tomando Café - detalhe" class="w-full h-auto rounded-lg shadow-md" onclick="openModal(this.src)">
-                <video src="assets/20250823_134317.mp4" controls class="w-full h-auto rounded-lg shadow-md col-span-2 md:col-span-1"></video>
-            </div>
-        </section>
-
-        <!-- Botão Voltar -->
-        <div class="w-full text-center mt-8">
-            <a href="catalogo.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-                &larr; Voltar para o Catálogo
-            </a>
-        </div>
     </main>
-    
-    <!-- Modal for full-screen image view -->
-    <div id="imageModal" class="modal fixed inset-0 flex items-center justify-center p-4">
-        <img id="fullImage" class="modal-content max-w-full max-h-full rounded-lg shadow-xl cursor-pointer">
-        <span id="closeModal" class="close-btn">&times;</span>
-    </div>
 
-    <!-- JavaScript to handle modal functionality -->
-    <script>
-        function openModal(imageSrc) {
-            const modal = document.getElementById("imageModal");
-            const modalImg = document.getElementById("fullImage");
-            modal.style.display = "flex";
-            modalImg.src = imageSrc;
-        }
-
-        const closeModalBtn = document.getElementById("closeModal");
-        closeModalBtn.onclick = function() { 
-            const modal = document.getElementById("imageModal");
-            modal.style.display = "none";
-        }
-
-        const modal = document.getElementById("imageModal");
-        modal.onclick = function(event) {
-            if (event.target !== document.getElementById("fullImage")) {
-                this.style.display = "none";
-            }
-        }
-    </script>
-    
     <!-- Footer -->
     <footer class="w-full text-center py-6 text-gray-500 text-sm">
         <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
