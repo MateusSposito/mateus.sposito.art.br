@@ -42,56 +42,10 @@
             width: 100%;
             height: 250px;
             border-radius: 8px;
-            cursor: pointer;
             transition: transform 0.3s ease;
         }
         .gallery img:hover {
             transform: scale(1.05);
-        }
-        /* Modal for full-screen image view */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-        .modal-content, .modal-caption {
-            animation-name: zoom;
-            animation-duration: 0.6s;
-        }
-        @keyframes zoom {
-            from {transform:scale(0)} 
-            to {transform:scale(1)}
-        }
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .close-btn:hover,
-        .close-btn:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
         }
     </style>
 </head>
@@ -124,7 +78,7 @@
             <div class="card p-8 md:p-10">
                 <h2 class="section-title text-center mb-6">Capivara Lendo</h2>
                 <div class="flex flex-col md:flex-row items-center md:items-start md:space-x-8 mb-8">
-                    <img src="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="w-full md:w-1/2 rounded-lg mb-6 md:mb-0 shadow-lg" onclick="openModal(this.src)">
+                    <img src="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="w-full md:w-1/2 rounded-lg mb-6 md:mb-0 shadow-lg">
                     <div class="text-lg text-gray-700 space-y-4">
                         <p class="font-bold">A "Capivara Lendo" é uma peça única, com um estilo mais orgânico e natural. A escultura foca em capturar a leveza do momento em que a capivara se dedica à leitura, com um formato que lembra mais uma peça de madeira entalhada à mão.</p>
                         <br>
@@ -143,11 +97,11 @@
         <section class="mb-16">
             <h2 class="section-title text-center mb-10">Galeria</h2>
             <div class="gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <img src="assets/20250919_130630.jpg" alt="Capivara Lendo - vista frontal" class="w-full h-auto rounded-lg shadow-md" onclick="openModal(this.src)">
-                <img src="assets/20250919_130647.jpg" alt="Capivara Lendo - vista lateral" class="w-full h-auto rounded-lg shadow-md" onclick="openModal(this.src)">
-                <img src="assets/20250919_130741.jpg" alt="Capivara Lendo - detalhe" class="w-full h-auto rounded-lg shadow-md" onclick="openModal(this.src)">
-                <img src="assets/20250919_130759.jpg" alt="Capivara Lendo - detalhe" class="w-full h-auto rounded-lg shadow-md" onclick="openModal(this.src)">
-                <img src="assets/20250919_130813.jpg" alt="Capivara Lendo - detalhe" class="w-full h-auto rounded-lg shadow-md" onclick="openModal(this.src)">
+                <img src="assets/20250919_130630.jpg" alt="Capivara Lendo - vista frontal" class="w-full h-auto rounded-lg shadow-md">
+                <img src="assets/20250919_130647.jpg" alt="Capivara Lendo - vista lateral" class="w-full h-auto rounded-lg shadow-md">
+                <img src="assets/20250919_130741.jpg" alt="Capivara Lendo - detalhe" class="w-full h-auto rounded-lg shadow-md">
+                <img src="assets/20250919_130759.jpg" alt="Capivara Lendo - detalhe" class="w-full h-auto rounded-lg shadow-md">
+                <img src="assets/20250919_130813.jpg" alt="Capivara Lendo - detalhe" class="w-full h-auto rounded-lg shadow-md">
             </div>
         </section>
 
@@ -158,43 +112,6 @@
             </a>
         </div>
     </main>
-    
-    <!-- Modal for full-screen image view -->
-    <div id="imageModal" class="modal fixed inset-0 flex items-center justify-center p-4">
-        <img id="fullImage" class="modal-content max-w-full max-h-full rounded-lg shadow-xl cursor-pointer">
-        <span id="closeModal" class="close-btn">&times;</span>
-    </div>
-
-    <!-- JavaScript to handle modal functionality -->
-    <script>
-        // Ensure the modal is hidden when the page loads
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const modal = document.getElementById("imageModal");
-            if (modal) {
-                modal.style.display = "none";
-            }
-        });
-        
-        function openModal(imageSrc) {
-            const modal = document.getElementById("imageModal");
-            const modalImg = document.getElementById("fullImage");
-            modal.style.display = "flex";
-            modalImg.src = imageSrc;
-        }
-
-        const closeModalBtn = document.getElementById("closeModal");
-        closeModalBtn.onclick = function() { 
-            const modal = document.getElementById("imageModal");
-            modal.style.display = "none";
-        }
-
-        const modal = document.getElementById("imageModal");
-        modal.onclick = function(event) {
-            if (event.target !== document.getElementById("fullImage")) {
-                this.style.display = "none";
-            }
-        }
-    </script>
     
     <!-- Footer -->
     <footer class="w-full text-center py-6 text-gray-500 text-sm">
