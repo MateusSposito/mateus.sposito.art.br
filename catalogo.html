@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Obras - Mateus Sposito</title>
+    <title>Catálogo - Mateus Sposito</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -42,11 +42,6 @@
             transform: translateY(-8px);
             box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
         }
-        .gallery a {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-        }
         .gallery img {
             object-fit: cover;
             width: 100%;
@@ -84,22 +79,34 @@
     <!-- Main Content -->
     <main class="w-full container">
         
-        <!-- Catalog Section -->
+        <!-- Catálogo Section -->
         <section id="catalogo" class="mb-16">
-            <h2 class="section-title text-center mb-10">Catálogo de Obras</h2>
+            <h2 class="section-title text-center mb-10">Catálogo de Miniaturas</h2>
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Obra: Capivara Tomando Café -->
-                <a href="capivara.html" class="card overflow-hidden">
-                    <img src="assets/20250919_131146.jpg" alt="Escultura da Capivara Tomando Café">
-                    <div class="p-4 text-center">
-                        <h3 class="text-xl font-semibold text-blue-800">Capivara Tomando Café</h3>
-                        <p class="text-sm text-gray-500">Coleção Memes Materializados</p>
-                    </div>
+                 <!-- Capivara Tomando Café - com link para a página da capivara -->
+                <a href="capivara-cafe.html" class="card overflow-hidden">
+                    <img src="assets/20250919_131042.jpg" alt="Escultura da Capivara Tomando Café" class="w-full">
                 </a>
-
-                <!-- Adicione novas obras aqui, seguindo o mesmo padrão -->
-
+                 <!-- Capivara Lendo - com link para a página dela -->
+                <a href="capivara-lendo.html" class="card overflow-hidden">
+                    <img src="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="w-full">
+                </a>
+                <!-- Miniaturas de resina -->
+                <div class="card overflow-hidden">
+                    <img src="assets/Miniaturas01_WBG.jpg" alt="Miniaturas de resina" class="w-full">
+                </div>
+                <div class="card overflow-hidden">
+                    <img src="assets/Elson.jpg" alt="Miniatura de Elson" class="w-full">
+                </div>
+                <div class="card overflow-hidden">
+                    <img src="assets/Bete.jpg" alt="Miniatura de Bete" class="w-full">
+                </div>
+                <div class="card overflow-hidden">
+                    <img src="assets/Lara.jpg" alt="Miniatura de Lara" class="w-full">
+                </div>
+                <div class="card overflow-hidden">
+                    <img src="assets/Regina.jpg" alt="Miniatura de Regina" class="w-full">
+                </div>
             </div>
         </section>
 
