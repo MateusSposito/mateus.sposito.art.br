@@ -30,6 +30,8 @@
             background-color: #ffc107;
             margin-top: 8px;
             border-radius: 2px;
+            margin-left: auto; /* Centraliza o after */
+            margin-right: auto;
         }
         .card {
             background-color: white;
@@ -42,15 +44,26 @@
             transform: translateY(-8px);
             box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
         }
-        .gallery img {
-            object-fit: cover;
+        /* NOVO ESTILO: Garante que as miniaturas não sejam cortadas no catálogo */
+        .gallery-item-container {
+            position: relative;
+            padding-top: 100%; /* Garante aspecto 1:1 */
+            background-color: #e2e8f0; 
+            overflow: hidden;
+        }
+        .gallery-img-content {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 250px;
+            height: 100%;
+            object-fit: contain; /* ESSENCIAL: Ajusta a imagem inteira sem cortar */
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        .gallery img:hover {
+        /* Efeito de hover na imagem */
+        .gallery a:hover .gallery-img-content {
             transform: scale(1.05);
         }
         .hidden {
@@ -86,13 +99,28 @@
         <section id="caricaturas" class="mb-16">
             <h2 class="section-title text-center mb-10">Caricaturas</h2>
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Miniaturas mais recentes na categoria -->
+                
+                <!-- 1. Maíra (NOVA PEÇA - COLOCADA EM PRIMEIRO) -->
+                <a href="maira.html" class="card overflow-hidden">
+                    <div class="gallery-item-container">
+                        <img src="assets/20251003_205502.jpg" alt="Miniatura de Maíra" class="gallery-img-content" onclick="openModal(this.src)">
+                    </div>
+                </a>
+
+                <!-- 2. Luciana e Jarbas -->
                 <a href="luciana-jarbas.html" class="card overflow-hidden">
-                    <img src="assets/20250919_185353.jpg" alt="Miniatura de Luciana e Jarbas" class="w-full" onclick="openModal(this.src)">
+                    <div class="gallery-item-container">
+                        <img src="assets/20250919_185121_2.jpg" alt="Miniatura de Luciana e Jarbas" class="gallery-img-content" onclick="openModal(this.src)">
+                    </div>
                 </a>
+                
+                <!-- 3. Regina -->
                 <a href="#" class="card overflow-hidden">
-                    <img src="assets/Regina.jpg" alt="Miniatura de Regina" class="w-full" onclick="openModal(this.src)">
+                    <div class="gallery-item-container">
+                        <img src="assets/Regina.jpg" alt="Miniatura de Regina" class="gallery-img-content" onclick="openModal(this.src)">
+                    </div>
                 </a>
+                
                 <!-- Link para ver o catálogo completo -->
                 <a href="caricaturas.html" class="card overflow-hidden bg-blue-100 flex items-center justify-center p-4 text-center text-blue-800 font-semibold text-lg hover:bg-blue-200 transition-colors duration-300">
                     Ver todas as Caricaturas
@@ -104,8 +132,11 @@
         <section id="memes" class="mb-16">
             <h2 class="section-title text-center mb-10">Memes</h2>
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Capivara Café -->
                 <a href="capivara-cafe.html" class="card overflow-hidden">
-                    <img src="assets/20250919_131042.jpg" alt="Escultura da Capivara Tomando Café" class="w-full" onclick="openModal(this.src)">
+                    <div class="gallery-item-container">
+                        <img src="assets/20250919_131042.jpg" alt="Escultura da Capivara Tomando Café" class="gallery-img-content" onclick="openModal(this.src)">
+                    </div>
                 </a>
             </div>
         </section>
@@ -114,8 +145,11 @@
         <section id="estilo-proprio" class="mb-16">
             <h2 class="section-title text-center mb-10">Estilo Próprio</h2>
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Capivara Lendo -->
                 <a href="capivara-lendo.html" class="card overflow-hidden">
-                    <img src="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="w-full" onclick="openModal(this.src)">
+                    <div class="gallery-item-container">
+                        <img src="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="gallery-img-content" onclick="openModal(this.src)">
+                    </div>
                 </a>
             </div>
         </section>
