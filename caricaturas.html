@@ -30,6 +30,9 @@
             background-color: #ffc107;
             margin-top: 8px;
             border-radius: 2px;
+            /* Corrigindo a centralização do after */
+            margin-left: auto;
+            margin-right: auto;
         }
         .card {
             background-color: white;
@@ -42,15 +45,28 @@
             transform: translateY(-8px);
             box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
         }
-        .gallery img {
-            object-fit: cover;
+        /* ESTILOS DA GALERIA MODIFICADOS PARA NÃO CORTAR */
+        .gallery-item-container {
+            /* O container que mantém o aspecto 1:1 e o fundo */
+            position: relative;
+            padding-top: 100%; /* Garante um quadrado para a área da imagem */
+            background-color: #e2e8f0; 
+            overflow: hidden;
+        }
+        .gallery-img-content {
+            /* A imagem em si, dentro do container */
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 250px;
+            height: 100%;
+            object-fit: contain; /* ESSENCIAL: Ajusta a imagem inteira sem cortar */
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        .gallery img:hover {
+        /* Removendo .gallery img do CSS antigo pois estamos usando classes específicas no HTML */
+        .gallery a:hover .gallery-img-content {
             transform: scale(1.05);
         }
     </style>
@@ -84,31 +100,43 @@
             <h2 class="section-title text-center mb-10">Caricaturas</h2>
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- Maíra (Nova Peça - Adicionada no início) -->
+                <!-- Maíra (Nova Peça - Correção: Caminho da imagem e novo estilo de exibição) -->
                 <a href="maira.html" class="card overflow-hidden">
-                    <img src="20251003_205502.jpg" alt="Miniatura de Maíra" class="w-full">
+                    <div class="gallery-item-container">
+                        <img src="assets/20251003_205502.jpg" alt="Miniatura de Maíra" class="gallery-img-content">
+                    </div>
                 </a>
 
                 <!-- Luciana e Jarbas (Versão Corrigida) -->
                 <a href="luciana-jarbas.html" class="card overflow-hidden">
-                    <img src="assets/Luciana.png" alt="Miniatura de Luciana e Jarbas" class="w-full">
+                    <div class="gallery-item-container">
+                        <img src="assets/Luciana.png" alt="Miniatura de Luciana e Jarbas" class="gallery-img-content">
+                    </div>
                 </a>
                 
                 <!-- Regina -->
                 <a href="#" class="card overflow-hidden">
-                    <img src="assets/Regina.jpg" alt="Miniatura de Regina" class="w-full">
+                    <div class="gallery-item-container">
+                        <img src="assets/Regina.jpg" alt="Miniatura de Regina" class="gallery-img-content">
+                    </div>
                 </a>
                 <!-- Lara -->
                 <a href="#" class="card overflow-hidden">
-                    <img src="assets/Lara.jpg" alt="Miniatura de Lara" class="w-full">
+                    <div class="gallery-item-container">
+                        <img src="assets/Lara.jpg" alt="Miniatura de Lara" class="gallery-img-content">
+                    </div>
                 </a>
                 <!-- Bete -->
                 <a href="#" class="card overflow-hidden">
-                    <img src="assets/Bete.jpg" alt="Miniatura de Bete" class="w-full">
+                    <div class="gallery-item-container">
+                        <img src="assets/Bete.jpg" alt="Miniatura de Bete" class="gallery-img-content">
+                    </div>
                 </a>
                 <!-- Elson -->
                 <a href="#" class="card overflow-hidden">
-                    <img src="assets/Elson.jpg" alt="Miniatura de Elson" class="w-full">
+                    <div class="gallery-item-container">
+                        <img src="assets/Elson.jpg" alt="Miniatura de Elson" class="gallery-img-content">
+                    </div>
                 </a>
             </div>
         </section>
