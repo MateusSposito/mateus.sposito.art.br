@@ -1,224 +1,197 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maíra</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-        }
-        .section-title {
-            position: relative;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #1a237e;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: #ffc107;
-            margin-top: 8px;
-            border-radius: 2px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            padding: 2.5rem;
-        }
-        .gallery-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            cursor: pointer; /* Adicionado para indicar que é clicável */
-        }
-        .gallery-img:hover {
-            transform: scale(1.03);
-        }
-
-        .detail-item {
-            padding: 0.5rem 0;
-            border-bottom: 1px dashed #e5e7eb;
-        }
-        .detail-item:last-child {
-            border-bottom: none;
-        }
-
-        /* --- Estilos do Modal (LightBox) --- */
-        .modal {
-            display: none; /* Inicia oculto */
-            position: fixed;
-            z-index: 100; /* Garante que fique acima de todo o conteúdo */
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.9); /* Fundo preto semi-transparente */
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 900px;
-            max-height: 80vh; /* Altura máxima para caber na tela */
-            object-fit: contain; /* Garante que a imagem caiba sem cortar */
-        }
-
-        /* O botão de fechar */
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close-btn:hover,
-        .close-btn:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maíra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .section-title {
+            position: relative;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a237e;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #ffc107;
+            margin-top: 8px;
+            border-radius: 2px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+        }
+        .gallery-img-container {
+            /* Garante que o container do item da galeria seja responsivo */
+            position: relative;
+            padding-top: 100%; /* Cria um container quadrado (1:1 ratio) */
+            background-color: #e2e8f0; /* Fundo cinza para áreas não preenchidas */
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .gallery-img-container:hover {
+            transform: scale(1.03);
+        }
+        .gallery-img {
+            /* A imagem em si */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ajusta a imagem dentro do container sem cortar */
+            border-radius: 8px;
+        }
+        .detail-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
 
-        <header class="w-full flex justify-center py-6 mb-12">
-        <div class="flex items-center space-x-4">
-            <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15v-5H8v5h3zm4-5h-3v5h3v-5zM12 5a2 2 0 012 2v2H10V7a2 2 0 012-2z"/>
-            </svg>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900">Mateus Sposito</h1>
-        </div>
-    </header>
+    <!-- Header Section -->
+    <header class="w-full flex justify-center py-6 mb-12">
+        <div class="flex items-center space-x-4">
+            <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15v-5H8v5h3zm4-5h-3v5h3v-5zM12 5a2 2 0 012 2v2H10V7a2 2 0 012-2z"/>
+            </svg>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900">Mateus Sposito</h1>
+        </div>
+    </header>
 
-        <nav class="w-full flex justify-center mb-10">
-        <div class="flex space-x-6 text-xl">
-            <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
-            <a href="catalogo.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Catálogo</a>
-            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
-        </div>
-    </nav>
+    <!-- Navigation -->
+    <nav class="w-full flex justify-center mb-10">
+        <div class="flex space-x-6 text-xl">
+            <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
+            <a href="catalogo.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Catálogo</a>
+            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
+        </div>
+    </nav>
 
-        <main class="w-full container">
+    <!-- Main Content - Maíra Caricature -->
+    <main class="w-full container">
 
-        <section class="mb-16">
-            <a href="caricaturas.html" class="text-blue-600 hover:text-blue-800 font-medium mb-6 inline-block">
-                &larr; Voltar para Caricaturas
-            </a>
-            <div class="card">
-                <h2 class="section-title text-center mb-10">Maíra</h2>
+        <section class="mb-16">
+            <a href="caricaturas.html" class="text-blue-600 hover:text-blue-800 font-medium mb-6 inline-block">
+                &larr; Voltar para Caricaturas
+            </a>
+            <div class="card">
+                <h2 class="section-title text-center mb-10">Maíra</h2>
 
-                                <div class="mb-12">
-                    
-                                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        A miniatura da Maíra foi uma peça muito legal de fazer, principalmente pela interação com a Estela (mãe da Maíra) através das inúmeras fotos e mensagens trocadas durante o processo. Pessoa muito agradável e divertidíssima, Estela conseguiu passar seu enorme carinho pela filha, preocupada com cada detalhe, de forma que pudesse ser materializado na miniatura com esse enorme sorriso.
-                    </p>
-                    
-                                        <div class="bg-gray-50 p-4 rounded-lg">
-                        <h4 class="font-semibold text-lg mb-2 text-blue-800">Ficha Técnica</h4>
-                        <div class="detail-item"><span class="font-medium">Altura:</span> 12 cm</div>
-                        <div class="detail-item"><span class="font-medium">Material:</span> Resina UV, pintura acrílica e verniz acrílico fosco e brilhante.</div>
-                        <div class="detail-item"><span class="font-medium">Produção:</span> Produzida entre setembro e outubro de 2025.</div>
-                    </div>
-                </div>
+                <!-- Content: Description and Technical Details -->
+                <div class="mb-12">
+                    
+                    <!-- Descrição (Texto agora sem negrito) -->
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        A miniatura da Maíra foi uma peça muito legal de fazer, principalmente pela interação com a Estela (mãe da Maíra) através das inúmeras fotos e mensagens trocadas durante o processo. Pessoa muito agradável e divertidíssima, Estela conseguiu passar seu enorme carinho pela filha, preocupada com cada detalhe, de forma que pudesse ser materializado na miniatura com esse enorme sorriso.
+                    </p>
+                    
+                    <!-- Ficha Técnica Atualizada -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-lg mb-2 text-blue-800">Ficha Técnica</h4>
+                        <div class="detail-item"><span class="font-medium">Altura:</span> 12 cm</div>
+                        <div class="detail-item"><span class="font-medium">Material:</span> Resina UV, pintura acrílica e verniz acrílico fosco e brilhante.</div>
+                        <div class="detail-item"><span class="font-medium">Produção:</span> Produzida entre setembro e outubro de 2025.</div>
+                    </div>
+                </div>
 
-                                <div class="mt-12">
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                        
-                                                <img src="assets/Maira.jpg" alt="Miniatura da Maíra Finalizada" class="gallery-img" onclick="openModal(this)">
+                <!-- Galeria de Processo (Making Of) -->
+                <div class="mt-12">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        
+                        <!-- Maira.jpg (Primeira da Sequência) -->
+                        <div class="gallery-img-container">
+                            <img src="assets/Maira.jpg" alt="Miniatura da Maíra Finalizada" class="gallery-img">
+                        </div>
 
-                                                <img src="assets/20250928_195653.jpg" alt="Escultura da Maíra - Etapa 1" class="gallery-img" onclick="openModal(this)">
-                        <img src="assets/20250929_162240.jpg" alt="Escultura da Maíra - Etapa 2" class="gallery-img" onclick="openModal(this)">
-                        <img src="assets/20251001_122341.jpg" alt="Escultura da Maíra - Etapa 3" class="gallery-img" onclick="openModal(this)">
-                        <img src="assets/20251001_193527.jpg" alt="Escultura da Maíra - Etapa 4" class="gallery-img" onclick="openModal(this)">
-                        <img src="assets/20251002_185733.jpg" alt="Escultura da Maíra - Etapa 5" class="gallery-img" onclick="openModal(this)">
-                        <img src="assets/20251003_104041.jpg" alt="Escultura da Maíra - Etapa 6" class="gallery-img" onclick="openModal(this)">
-                        <img src="assets/20251003_120519.jpg" alt="Escultura da Maíra - Etapa 7" class="gallery-img" onclick="openModal(this)">
-                        <img src="assets/20251003_145751.jpg" alt="Escultura da Maíra - Etapa 8" class="gallery-img" onclick="openModal(this)">
-                        <img src="assets/20251003_205502.jpg" alt="Escultura da Maíra - Etapa 9 (Foto do Botão)" class="gallery-img" onclick="openModal(this)">
-                        <img src="assets/20251003_205515.jpg" alt="Escultura da Maíra - Etapa 10" class="gallery-img" onclick="openModal(this)">
-                        <img src="assets/20251004_083642.jpg" alt="Escultura da Maíra - Etapa Final" class="gallery-img" onclick="openModal(this)">
+                        <!-- Fotos do processo, ordenadas por data/hora -->
+                        <div class="gallery-img-container">
+                            <img src="assets/20250928_195653.jpg" alt="Escultura da Maíra - Etapa 1" class="gallery-img">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="assets/20250929_162240.jpg" alt="Escultura da Maíra - Etapa 2" class="gallery-img">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="assets/20251001_122341.jpg" alt="Escultura da Maíra - Etapa 3" class="gallery-img">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="assets/20251001_193527.jpg" alt="Escultura da Maíra - Etapa 4" class="gallery-img">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="assets/20251002_185733.jpg" alt="Escultura da Maíra - Etapa 5" class="gallery-img">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="assets/20251003_104041.jpg" alt="Escultura da Maíra - Etapa 6" class="gallery-img">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="assets/20251003_120519.jpg" alt="Escultura da Maíra - Etapa 7" class="gallery-img">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="assets/20251003_145751.jpg" alt="Escultura da Maíra - Etapa 8" class="gallery-img">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="assets/20251003_205502.jpg" alt="Escultura da Maíra - Etapa 9 (Foto do Botão)" class="gallery-img">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="assets/20251003_205515.jpg" alt="Escultura da Maíra - Etapa 10" class="gallery-img">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="assets/20251004_083642.jpg" alt="Escultura da Maíra - Etapa Final" class="gallery-img">
+                        </div>
 
-                    </div>
-                </div>
+                    </div>
+                </div>
 
-            </div>
-        </section>
-        
-                <section id="contato" class="mb-16">
-            <div class="card p-8 md:p-10 text-center">
-                <h2 class="section-title text-center mb-8">Entre em Contato</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-                        Enviar E-mail
-                    </a>
-                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-                        Visitar Loja
-                    </a>
-                </div>
-            </div>
-        </section>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contato" class="mb-16">
+            <div class="card p-8 md:p-10 text-center">
+                <h2 class="section-title text-center mb-8">Entre em Contato</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Enviar E-mail
+                    </a>
+                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Visitar Loja
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    </main>
+    </main>
 
-        <footer class="w-full text-center py-6 text-gray-500 text-sm">
-        <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
-    </footer>
-
-        <div id="imageModal" class="modal">
-                <span class="close-btn" onclick="closeModal()">&times;</span>
-        
-                <img class="modal-content" id="modalImage">
-    </div>
-
-        <script>
-        // Pega o elemento modal e a imagem dentro dele
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-
-        // Função para abrir o modal
-        function openModal(imageElement) {
-            modal.style.display = "block"; // Torna o modal visível
-            modalImage.src = imageElement.src; // Define o src da imagem do modal para o src da imagem clicada
-            modalImage.alt = imageElement.alt; // Define o alt da imagem
-        }
-
-        // Função para fechar o modal
-        function closeModal() {
-            modal.style.display = "none"; // Oculta o modal
-        }
-
-        // Fecha o modal se o usuário clicar fora da imagem
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-    </script>
+    <!-- Footer -->
+    <footer class="w-full text-center py-6 text-gray-500 text-sm">
+        <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
+    </footer>
 
 </body>
 </html>
