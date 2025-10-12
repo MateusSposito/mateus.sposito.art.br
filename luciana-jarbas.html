@@ -23,6 +23,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         .section-title::after {
+            /* Ajuste para centralizar o underline */
             content: '';
             display: block;
             width: 60px;
@@ -30,6 +31,8 @@
             background-color: #ffc107;
             margin-top: 8px;
             border-radius: 2px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .card {
             background-color: white;
@@ -38,28 +41,26 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
         }
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
-        }
-        .gallery img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
+        /* Estilo para as miniaturas na galeria */
+        .gallery-item-container {
+            position: relative;
+            padding-top: 100%; /* Mantém a proporção 1:1 */
+            background-color: #e2e8f0; 
+            overflow: hidden;
             border-radius: 8px;
             cursor: pointer;
+        }
+        .gallery-item-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Garante que a imagem inteira seja vista, se necessário */
             transition: transform 0.3s ease;
         }
-        .gallery img:hover {
+        .gallery-item-container:hover img {
             transform: scale(1.05);
-        }
-        .aspect-square {
-            aspect-ratio: 1 / 1;
-        }
-        .video-container {
-            width: 100%;
-            max-width: 560px;
-            margin: 0 auto;
         }
     </style>
 </head>
@@ -80,12 +81,20 @@
         <div class="flex space-x-6 text-xl">
             <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
             <a href="catalogo.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Catálogo</a>
-            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
+            <a href="#contato-footer" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="w-full container">
+        
+        <!-- Botão de Voltar -->
+        <div class="mb-8">
+            <a href="caricaturas.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-semibold">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Voltar para Caricaturas
+            </a>
+        </div>
         
         <!-- Obra Details Section -->
         <section class="mb-16">
@@ -99,10 +108,11 @@
                 <div class="my-8 text-left">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Detalhes Técnicos</h3>
                     <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li><span class="font-semibold">Medidas:</span> 12cm (Jarbas) e 11cm (Luciana)</li>
-                        <li><span class="font-semibold">Produção:</span> de agosto a setembro de 2025</li>
-                        <li><span class="font-semibold">Materiais:</span> Resina UV.</li>
-                        <li><span class="font-semibold">Acabamento:</span> Pintada com tinta acrílica e envernizada com verniz acrílico brilhante e fosco, destacando cada tipo diferente de textura.</li>
+                        <li><span class="font-semibold text-blue-700">Medidas:</span> 12cm (Jarbas) e 11cm (Luciana)</li>
+                        <li><span class="font-semibold text-blue-700">Produção:</span> de agosto a setembro de 2025</li>
+                        <!-- MATERIAL É RESINA UV, CONFORME ORIGINAL -->
+                        <li><span class="font-semibold text-blue-700">Materiais:</span> Resina UV.</li>
+                        <li><span class="font-semibold text-blue-700">Acabamento:</span> Pintada com tinta acrílica e envernizada com verniz acrílico brilhante e fosco, destacando cada tipo diferente de textura.</li>
                     </ul>
                 </div>
                 
@@ -114,62 +124,63 @@
                     </p>
                 </div>
                 
-                <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Galeria de Fotos do Processo (Sem Modal para evitar o "flash") -->
+                <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                     <!-- Ordem cronológica -->
-                    <div class="card overflow-hidden aspect-square">
-                        <img src="assets/Luciana.png" alt="Miniatura da Luciana">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
-                        <img src="assets/Jarbas.png" alt="Miniatura do Jarbas">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    <a href="assets/Luciana.png" target="_blank" class="card gallery-item-container">
+                        <img src="assets/Luciana.png" alt="Miniatura da Luciana - Rascunho Digital">
+                    </a>
+                    <a href="assets/Jarbas.png" target="_blank" class="card gallery-item-container">
+                        <img src="assets/Jarbas.png" alt="Miniatura do Jarbas - Rascunho Digital">
+                    </a>
+                    <a href="assets/20250830_222213.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250830_222213.jpg" alt="Miniaturas prontas para o acabamento">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250830_222250.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250830_222250.jpg" alt="Miniaturas pintadas na base">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250901_115333.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250901_115333.jpg" alt="Processo de montagem">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250908_161053.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250908_161053.jpg" alt="Miniatura de Jarbas sendo preparada">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250908_161930.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250908_161930.jpg" alt="Miniatura de Luciana sendo preparada">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250908_220413.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250908_220413.jpg" alt="Miniaturas finalizadas">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250908_221406.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250908_221406.jpg" alt="Detalhe do vestido de Luciana">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250908_224430.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250908_224430.jpg" alt="Miniaturas na caixa de transporte">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250911_194847.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250911_194847.jpg" alt="Miniaturas pintadas">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250919_185121_2.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250919_185121_2.jpg" alt="Acabamento final">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250919_185217.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250919_185217.jpg" alt="Detalhes de pintura no rosto de Luciana">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250919_185331.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250919_185331.jpg" alt="Detalhes de pintura no rosto de Jarbas">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    <a href="assets/20250919_185353.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250919_185353.jpg" alt="Miniaturas no topo do bolo">
-                    </div>
+                    </a>
                 </div>
 
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contato" class="mb-16">
-            <div class="card p-8 md:p-10 text-center">
-                <h2 class="section-title text-center mb-8">Entre em Contato</h2>
+        <section id="contato-footer" class="mb-16">
+            <div class="card p-8 md:p-10 text-center bg-blue-50">
+                <h2 class="section-title text-center mb-8 text-blue-800">Entre em Contato</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
                 </p>
