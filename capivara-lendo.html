@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capivara Lendo - Estilo Próprio</title>
+    <title>Capivara Lendo - Estilo Próprio - Mateus Sposito</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -28,7 +28,7 @@
             width: 60px;
             height: 4px;
             background-color: #ffc107;
-            margin-top: 8px;
+            margin: 8px auto 0; /* Centraliza o sublinhado */
             border-radius: 2px;
         }
         .card {
@@ -36,22 +36,34 @@
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
         }
-        .gallery img {
-            object-fit: cover;
-            width: 100%;
-            height: 250px;
+        /* Estilo para as miniaturas na galeria (Padrão) */
+        .gallery-item-container {
+            position: relative;
+            padding-top: 100%; /* Mantém a proporção 1:1 */
+            background-color: #e2e8f0; 
+            overflow: hidden;
             border-radius: 8px;
+            cursor: pointer;
+        }
+        .gallery-item-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Garante que a imagem inteira seja vista, sem crop */
             transition: transform 0.3s ease;
         }
-        .gallery img:hover {
+        .gallery-item-container:hover img {
             transform: scale(1.05);
         }
     </style>
 </head>
 <body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
 
-    <!-- Header Section -->
+    <!-- Header Section (Padrão) -->
     <header class="w-full flex justify-center py-6 mb-12">
         <div class="flex items-center space-x-4">
             <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
@@ -61,59 +73,102 @@
         </div>
     </header>
 
-    <!-- Navigation -->
+    <!-- Navigation (Padrão) -->
     <nav class="w-full flex justify-center mb-10">
         <div class="flex space-x-6 text-xl">
             <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
-            <a href="catalogo.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Catálogo</a>
-            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
+            <a href="catalogo.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Catálogo</a>
+            <a href="#contato-footer" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="w-full container">
         
-        <!-- Detalhes da Miniatura -->
+        <!-- Botão de Voltar (Padrão) -->
+        <div class="mb-8">
+            <a href="catalogo.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-semibold">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Voltar para Catálogo
+            </a>
+        </div>
+
+        <!-- Obra Details Section (Reestruturada) -->
         <section class="mb-16">
-            <div class="card p-8 md:p-10">
-                <h2 class="section-title text-center mb-6">Capivara Lendo</h2>
-                <div class="flex flex-col md:flex-row items-center md:items-start md:space-x-8 mb-8">
-                    <img src="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="w-full md:w-1/2 rounded-lg mb-6 md:mb-0 shadow-lg">
-                    <div class="text-lg text-gray-700 space-y-4">
-                        <p class="font-bold">A "Capivara Lendo" é uma peça única, com um estilo mais orgânico e natural. A escultura foca em capturar a leveza do momento em que a capivara se dedica à leitura, com um formato que lembra mais uma peça de madeira entalhada à mão.</p>
-                        <br>
-                        <p class="font-bold">Detalhes Técnicos</p>
-                        <p>Medidas: 9,5cm (altura) x 9cm (largura) x 9,2cm (comprimento)</p>
-                        <p>Peso: 300g (maciça)</p>
-                        <p>Produção: Agosto - Setembro de 2025</p>
-                        <p>Materiais: Resina UV, resina epóxi, resina poliéster e calcita.</p>
-                        <p>Acabamento: Pintada com tinta acrílica e envernizada com verniz acrílico fosco. Apenas a capa do livro e os olhos receberam verniz acrílico brilhante.</p>
-                    </div>
+            <div class="card p-8 md:p-10 text-center">
+                <h2 class="section-title text-center mb-8">Capivara Lendo</h2>
+                
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    A "Capivara Lendo" é uma peça única, com um estilo mais orgânico e natural. A escultura foca em capturar a leveza do momento em que a capivara se dedica à leitura, com um formato que lembra mais uma peça de madeira entalhada à mão.
+                </p>
+
+                <!-- Dados Técnicos (Ficha Técnica Padronizada) -->
+                <div class="my-8 text-left">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Detalhes Técnicos</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><span class="font-semibold text-blue-700">Medidas:</span> 9,5 cm (altura) x 9 cm (largura) x 9,2 cm (comprimento)</li>
+                        <li><span class="font-semibold text-blue-700">Peso:</span> 300g (maciça)</li>
+                        <li><span class="font-semibold text-blue-700">Produção:</span> Agosto - Setembro de 2025</li>
+                        <li><span class="font-semibold text-blue-700">Materiais:</span> Resina UV, resina epóxi, resina poliéster e calcita.</li>
+                        <li><span class="font-semibold text-blue-700">Acabamento:</span> Pintada com tinta acrílica e envernizada com verniz acrílico fosco. Apenas a capa do livro e os olhos receberam verniz acrílico brilhante.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Galeria do Processo de Criação -->
+        <!-- Galeria do Processo de Criação (Padronizada) -->
         <section class="mb-16">
-            <h2 class="section-title text-center mb-10">Galeria</h2>
-            <div class="gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <img src="assets/20250919_130630.jpg" alt="Capivara Lendo - vista frontal" class="w-full h-auto rounded-lg shadow-md">
-                <img src="assets/20250919_130647.jpg" alt="Capivara Lendo - vista lateral" class="w-full h-auto rounded-lg shadow-md">
-                <img src="assets/20250919_130741.jpg" alt="Capivara Lendo - detalhe" class="w-full h-auto rounded-lg shadow-md">
-                <img src="assets/20250919_130759.jpg" alt="Capivara Lendo - detalhe" class="w-full h-auto rounded-lg shadow-md">
-                <img src="assets/20250919_130813.jpg" alt="Capivara Lendo - detalhe" class="w-full h-auto rounded-lg shadow-md">
+            <!-- Título removido conforme solicitado -->
+            <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <!-- Imagem 1 -->
+                <a href="assets/20250919_130630.jpg" target="_blank" class="card gallery-item-container">
+                    <img src="assets/20250919_130630.jpg" alt="Capivara Lendo - vista frontal">
+                </a>
+                
+                <!-- Imagem 2 -->
+                <a href="assets/20250919_130647.jpg" target="_blank" class="card gallery-item-container">
+                    <img src="assets/20250919_130647.jpg" alt="Capivara Lendo - vista lateral">
+                </a>
+                
+                <!-- Imagem 3 -->
+                <a href="assets/20250919_130741.jpg" target="_blank" class="card gallery-item-container">
+                    <img src="assets/20250919_130741.jpg" alt="Capivara Lendo - detalhe">
+                </a>
+                
+                <!-- Imagem 4 -->
+                <a href="assets/20250919_130759.jpg" target="_blank" class="card gallery-item-container">
+                    <img src="assets/20250919_130759.jpg" alt="Capivara Lendo - detalhe">
+                </a>
+                
+                <!-- Imagem 5 -->
+                <a href="assets/20250919_130813.jpg" target="_blank" class="card gallery-item-container">
+                    <img src="assets/20250919_130813.jpg" alt="Capivara Lendo - detalhe">
+                </a>
             </div>
         </section>
 
-        <!-- Botão Voltar -->
-        <div class="w-full text-center mt-8">
-            <a href="catalogo.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-                &larr; Voltar para o Catálogo
-            </a>
-        </div>
+        <!-- Contact Section (Padrão) -->
+        <section id="contato-footer" class="mb-16">
+            <div class="card p-8 md:p-10 text-center bg-blue-50">
+                <h2 class="section-title text-center mb-8 text-blue-800">Entre em Contato</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Enviar E-mail
+                    </a>
+                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Visitar Loja
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
     
-    <!-- Footer -->
+    <!-- Footer (Padrão) -->
     <footer class="w-full text-center py-6 text-gray-500 text-sm">
         <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
     </footer>
