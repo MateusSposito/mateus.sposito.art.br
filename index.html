@@ -28,10 +28,8 @@
             width: 60px;
             height: 4px;
             background-color: #ffc107;
-            margin-top: 8px;
+            margin: 8px auto 0; /* OTIMIZAÇÃO: Centralização mais limpa */
             border-radius: 2px;
-            margin-left: auto; /* Adicionado para centralizar */
-            margin-right: auto; /* Adicionado para centralizar */
         }
         .card {
             background-color: white;
@@ -69,7 +67,6 @@
 </head>
 <body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
 
-    <!-- Header Section -->
     <header class="w-full flex justify-center py-6 mb-12">
         <div class="flex items-center space-x-4">
             <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
@@ -79,7 +76,6 @@
         </div>
     </header>
 
-    <!-- Navigation -->
     <nav class="w-full flex justify-center mb-10">
         <div class="flex space-x-6 text-xl">
             <a href="index.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Início</a>
@@ -88,67 +84,57 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="w-full container">
         
-        <!-- Hero and About Section -->
         <section class="mb-16">
             <div class="card p-8 md:p-10 flex flex-col items-center">
-                <img src="assets/MateusPerfil.jpg" alt="Foto de Mateus Sposito" class="w-48 h-48 rounded-full mb-6 object-cover shadow-lg">
+                <img src="assets/MateusPerfil.jpg" alt="Foto de Mateus Sposito, artista de miniaturas" class="w-48 h-48 rounded-full mb-6 object-cover shadow-lg">
                 <p class="text-lg text-gray-700 leading-relaxed mb-6 text-center">
                     Da animação 3D ao toque artesanal em resina, minha jornada é uma fusão de tecnologia e arte.
                 </p>
             </div>
         </section>
 
-        <!-- Gallery Section -->
         <section id="portfolio" class="mb-16">
             <h2 class="section-title text-center mb-10">Miniaturas Recentes</h2>
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- Maíra (NOVA - Item 1) -->
                 <a href="maira.html" class="card overflow-hidden p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251003_205502.jpg" alt="Miniatura de Maíra" class="gallery-img">
+                        <img src="assets/20251003_205502.jpg" alt="Miniatura de Maíra, boneca artesanal em resina" class="gallery-img">
                     </div>
                 </a>
 
-                <!-- Luciana e Jarbas (Item 2) -->
                 <a href="luciana-jarbas.html" class="card overflow-hidden p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20250919_185121_2.jpg" alt="Escultura de Luciana e Jarbas" class="gallery-img">
+                        <img src="assets/20250919_185121_2.jpg" alt="Escultura personalizada de Luciana e Jarbas" class="gallery-img">
                     </div>
                 </a>
                 
-                <!-- Capivara Tomando Café (Item 3) -->
                 <a href="capivara-cafe.html" class="card overflow-hidden p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20250919_131042.jpg" alt="Escultura da Capivara Tomando Café" class="gallery-img">
+                        <img src="assets/20250919_131042.jpg" alt="Miniatura da Capivara Tomando Café, peça de colecionador" class="gallery-img">
                     </div>
                 </a>
                 
-                <!-- Capivara Lendo (Item 4) -->
                 <a href="capivara-lendo.html" class="card overflow-hidden p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="gallery-img">
+                        <img src="assets/20250919_130630.jpg" alt="Miniatura da Capivara Lendo um livro" class="gallery-img">
                     </div>
                 </a>
                 
-                <!-- Regina (Item 5) -->
                 <a href="#" class="card overflow-hidden p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/Regina.jpg" alt="Miniatura de Regina" class="gallery-img">
+                        <img src="assets/Regina.jpg" alt="Miniatura de Regina, detalhe de rosto esculpido" class="gallery-img">
                     </div>
                 </a>
                 
-                <!-- Link para ver o catálogo completo -->
-                <a href="catalogo.html" class="card overflow-hidden bg-blue-100 flex items-center justify-center p-4 text-center text-blue-800 font-semibold text-lg hover:bg-blue-200 transition-colors duration-300">
+                <a href="catalogo.html" class="card overflow-hidden bg-blue-100 flex items-center justify-center p-4 text-center text-blue-800 font-semibold text-lg hover:bg-blue-200 transition-colors duration-300" alt="Link para a página com o catálogo completo de miniaturas">
                     Ver Catálogo Completo
                 </a>
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contato" class="mb-16">
             <div class="card p-8 md:p-10 text-center">
                 <h2 class="section-title text-center mb-8">Entre em Contato</h2>
@@ -168,7 +154,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="w-full text-center py-6 text-gray-500 text-sm">
         <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
     </footer>
