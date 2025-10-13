@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capivara Tomando Café - Mateus Sposito</title>
+    <title>Capivara Tomando Café - Miniatura - Mateus Sposito</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -28,7 +28,7 @@
             width: 60px;
             height: 4px;
             background-color: #ffc107;
-            margin-top: 8px;
+            margin: 8px auto 0; /* Centraliza o sublinhado */
             border-radius: 2px;
         }
         .card {
@@ -38,27 +38,26 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
         }
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+        /* Estilo para as miniaturas na galeria (Padrão) */
+        .gallery-item-container {
+            position: relative;
+            padding-top: 100%; /* Mantém a proporção 1:1 */
+            background-color: #e2e8f0; 
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
         }
-        .gallery img {
-            object-fit: cover;
+        .gallery-item-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            border-radius: 8px;
+            object-fit: contain; /* Garante que a imagem inteira seja vista, sem crop */
             transition: transform 0.3s ease;
         }
-        .gallery img:hover {
+        .gallery-item-container:hover img {
             transform: scale(1.05);
-        }
-        .aspect-square {
-            aspect-ratio: 1 / 1;
-        }
-        .video-container {
-            width: 100%;
-            max-width: 560px;
-            margin: 0 auto;
         }
     </style>
 </head>
@@ -79,13 +78,21 @@
         <div class="flex space-x-6 text-xl">
             <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
             <a href="catalogo.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Catálogo</a>
-            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
+            <a href="#contato-footer" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="w-full container">
         
+        <!-- Botão de Voltar (Padrão) -->
+        <div class="mb-8">
+            <a href="catalogo.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-semibold">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Voltar para Catálogo
+            </a>
+        </div>
+
         <!-- Obra Details Section -->
         <section class="mb-16">
             <div class="card p-8 md:p-10 text-center">
@@ -94,15 +101,15 @@
                     Esta miniatura faz parte da coleção "Memes Materializados", uma série de peças que transformam ícones da internet em obras de arte física. A Capivara Tomando Café foi inspirado em um meme muito enviado pela minha esposa, Regina. Foi criada e finalizada entre agosto e setembro de 2025. Aguardem que muitos ainda virão!
                 </p>
 
-                <!-- Dados Técnicos -->
+                <!-- Dados Técnicos (Ficha Técnica Padronizada) -->
                 <div class="my-8 text-left">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Detalhes Técnicos</h3>
                     <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li><span class="font-semibold">Medidas:</span> 7.8 cm x 7.8 cm x 12 cm (Comprimento x Largura x Altura)</li>
-                        <li><span class="font-semibold">Peso:</span> 310g (maciça)</li>
-                        <li><span class="font-semibold">Produção:</span> de agosto a setembro de 2025</li>
-                        <li><span class="font-semibold">Materiais:</span> Resina UV, resina epóxi, resina poliéster e calcita.</li>
-                        <li><span class="font-semibold">Acabamento:</span> Pintada com tinta acrílica e envernizada com verniz acrílico brilhante.</li>
+                        <li><span class="font-semibold text-blue-700">Medidas:</span> 7.8 cm x 7.8 cm x 12 cm (Comprimento x Largura x Altura)</li>
+                        <li><span class="font-semibold text-blue-700">Peso:</span> 310g (maciça)</li>
+                        <li><span class="font-semibold text-blue-700">Produção:</span> de agosto a setembro de 2025</li>
+                        <li><span class="font-semibold text-blue-700">Materiais:</span> Resina UV, resina epóxi, resina poliéster e calcita.</li>
+                        <li><span class="font-semibold text-blue-700">Acabamento:</span> Pintada com tinta acrílica e envernizada com verniz acrílico brilhante.</li>
                     </ul>
                 </div>
                 
@@ -114,56 +121,80 @@
                     </p>
                 </div>
                 
-                <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Ordem cronológica -->
-                    <div class="card overflow-hidden aspect-square">
+                <!-- Galeria (Padrão Roll-up com o grid original) -->
+                <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Imagem 1 -->
+                    <a href="assets/1756991833298.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/1756991833298.jpg" alt="Render 3D da Capivara">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    
+                    <!-- Imagem 2 -->
+                    <a href="assets/20250910_141932.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250910_141932.jpg" alt="Miniaturas de resina na máquina 3D">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
-                        <video controls class="rounded-xl shadow-lg w-full h-full object-cover">
+                    </a>
+                    
+                    <!-- Vídeo (Sem <a> wrapper para facilitar o clique nos controles) -->
+                    <div class="card gallery-item-container">
+                        <video controls class="w-full h-full object-contain rounded-md" style="position: absolute; top: 0; left: 0;">
                             <source src="assets/20250910_163228.mp4" type="video/mp4">
                             Seu navegador não suporta a tag de vídeo.
                         </video>
                     </div>
-                    <div class="card overflow-hidden aspect-square">
+                    
+                    <!-- Imagem 4 -->
+                    <a href="assets/20250910_181020.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250910_181020.jpg" alt="Versão em resina branca da Capivara">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    
+                    <!-- Imagem 5 -->
+                    <a href="assets/20250912_071127.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250912_071127.jpg" alt="Miniatura em resina branca na mão">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    
+                    <!-- Imagem 6 -->
+                    <a href="assets/20250912_132223.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250912_132223.jpg" alt="Miniaturas sem pintura">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    
+                    <!-- Imagem 7 -->
+                    <a href="assets/20250915_201119.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250915_201119.jpg" alt="Miniaturas embaladas">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    
+                    <!-- Imagem 8 -->
+                    <a href="assets/20250917_140052.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250917_140052.jpg" alt="Miniatura em processo de pintura">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    
+                    <!-- Imagem 9 -->
+                    <a href="assets/20250918_110556.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250918_110556.jpg" alt="Três miniaturas pintadas">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    
+                    <!-- Imagem 10 -->
+                    <a href="assets/20250919_114022.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250919_114022.jpg" alt="Detalhe de um rosto de miniatura">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    
+                    <!-- Imagem 11 -->
+                    <a href="assets/20250919_131146.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250919_131146.jpg" alt="Miniatura finalizada na mão">
-                    </div>
-                    <div class="card overflow-hidden aspect-square">
+                    </a>
+                    
+                    <!-- Imagem 12 -->
+                    <a href="assets/20250919_131042.jpg" target="_blank" class="card gallery-item-container">
                         <img src="assets/20250919_131042.jpg" alt="Miniatura finalizada na base verde">
-                    </div>
+                    </a>
                 </div>
 
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contato" class="mb-16">
-            <div class="card p-8 md:p-10 text-center">
-                <h2 class="section-title text-center mb-8">Entre em Contato</h2>
+        <!-- Contact Section (Padronizada) -->
+        <section id="contato-footer" class="mb-16">
+            <div class="card p-8 md:p-10 text-center bg-blue-50">
+                <h2 class="section-title text-center mb-8 text-blue-800">Entre em Contato</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
                 </p>
