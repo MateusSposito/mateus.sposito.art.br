@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maíra</title>
+    <title>Maíra - Caricatura em Miniatura - Mateus Sposito</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -28,45 +28,36 @@
             width: 60px;
             height: 4px;
             background-color: #ffc107;
-            margin-top: 8px;
+            margin: 8px auto 0; /* Centraliza o sublinhado */
             border-radius: 2px;
-            margin-left: auto;
-            margin-right: auto;
         }
         .card {
             background-color: white;
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            padding: 2.5rem;
-        }
-        .gallery-img-container {
-            /* Garante que o container do item da galeria seja responsivo */
-            position: relative;
-            padding-top: 100%; /* Cria um container quadrado (1:1 ratio) */
-            background-color: #e2e8f0; /* Fundo cinza para áreas não preenchidas */
-            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
-            transition: transform 0.3s ease;
         }
-        .gallery-img-container:hover {
-            transform: scale(1.03);
+        /* Estilo para as miniaturas na galeria */
+        .gallery-item-container {
+            position: relative;
+            padding-top: 100%; /* Mantém a proporção 1:1 */
+            background-color: #e2e8f0; 
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
         }
-        .gallery-img {
-            /* A imagem em si */
+        .gallery-item-container img {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ajusta a imagem dentro do container sem cortar */
-            border-radius: 8px;
+            object-fit: contain; /* Garante que a imagem inteira seja vista, sem crop */
+            transition: transform 0.3s ease;
         }
-        .detail-item {
-            padding: 0.5rem 0;
-            border-bottom: 1px dashed #e5e7eb;
-        }
-        .detail-item:last-child {
-            border-bottom: none;
+        .gallery-item-container:hover img {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -87,91 +78,96 @@
         <div class="flex space-x-6 text-xl">
             <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
             <a href="catalogo.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Catálogo</a>
-            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
+            <a href="#contato-footer" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
         </div>
     </nav>
 
     <!-- Main Content - Maíra Caricature -->
     <main class="w-full container">
+        
+        <!-- Botão de Voltar (Padrão) -->
+        <div class="mb-8">
+            <a href="caricaturas.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-semibold">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Voltar para Caricaturas
+            </a>
+        </div>
 
         <section class="mb-16">
-            <a href="caricaturas.html" class="text-blue-600 hover:text-blue-800 font-medium mb-6 inline-block">
-                &larr; Voltar para Caricaturas
-            </a>
-            <div class="card">
-                <h2 class="section-title text-center mb-10">Maíra</h2>
+            <div class="card p-8 md:p-10 text-center">
+                <h2 class="section-title text-center mb-8">Maíra</h2>
 
                 <!-- Content: Description and Technical Details -->
                 <div class="mb-12">
                     
-                    <!-- Descrição (Texto agora sem negrito) -->
+                    <!-- Descrição -->
                     <p class="text-lg text-gray-700 leading-relaxed mb-6">
                         A miniatura da Maíra foi uma peça muito legal de fazer, principalmente pela interação com a Estela (mãe da Maíra) através das inúmeras fotos e mensagens trocadas durante o processo. Pessoa muito agradável e divertidíssima, Estela conseguiu passar seu enorme carinho pela filha, preocupada com cada detalhe, de forma que pudesse ser materializado na miniatura com esse enorme sorriso.
                     </p>
                     
-                    <!-- Ficha Técnica Atualizada -->
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <h4 class="font-semibold text-lg mb-2 text-blue-800">Ficha Técnica</h4>
-                        <div class="detail-item"><span class="font-medium">Altura:</span> 12 cm</div>
-                        <div class="detail-item"><span class="font-medium">Material:</span> Resina UV, pintura acrílica e verniz acrílico fosco e brilhante.</div>
-                        <div class="detail-item"><span class="font-medium">Produção:</span> Produzida entre setembro e outubro de 2025.</div>
+                    <!-- Dados Técnicos (Ficha Técnica Atualizada para o padrão UL/LI) -->
+                    <div class="my-8 text-left">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Detalhes Técnicos</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li><span class="font-semibold text-blue-700">Altura:</span> 12 cm</li>
+                            <li><span class="font-semibold text-blue-700">Material:</span> Resina UV, pintura acrílica e verniz acrílico fosco e brilhante.</li>
+                            <li><span class="font-semibold text-blue-700">Produção:</span> Produzida entre setembro e outubro de 2025.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Galeria de Processo (Making Of) -->
-                <div class="mt-12">
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                        
-                        <!-- Maira.jpg (Primeira da Sequência) -->
-                        <div class="gallery-img-container">
-                            <img src="assets/Maira.jpg" alt="Miniatura da Maíra Finalizada" class="gallery-img">
-                        </div>
+                <!-- Galeria de Processo (Making Of) - Padrão Roll-up -->
+                <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
+                    
+                    <!-- Maira.jpg (Primeira da Sequência) -->
+                    <a href="assets/Maira.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/Maira.jpg" alt="Miniatura da Maíra Finalizada">
+                    </a>
 
-                        <!-- Fotos do processo, ordenadas por data/hora -->
-                        <div class="gallery-img-container">
-                            <img src="assets/20250928_195653.jpg" alt="Escultura da Maíra - Etapa 1" class="gallery-img">
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="assets/20250929_162240.jpg" alt="Escultura da Maíra - Etapa 2" class="gallery-img">
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="assets/20251001_122341.jpg" alt="Escultura da Maíra - Etapa 3" class="gallery-img">
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="assets/20251001_193527.jpg" alt="Escultura da Maíra - Etapa 4" class="gallery-img">
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="assets/20251002_185733.jpg" alt="Escultura da Maíra - Etapa 5" class="gallery-img">
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="assets/20251003_104041.jpg" alt="Escultura da Maíra - Etapa 6" class="gallery-img">
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="assets/20251003_120519.jpg" alt="Escultura da Maíra - Etapa 7" class="gallery-img">
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="assets/20251003_145751.jpg" alt="Escultura da Maíra - Etapa 8" class="gallery-img">
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="assets/20251003_205502.jpg" alt="Escultura da Maíra - Etapa 9 (Foto do Botão)" class="gallery-img">
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="assets/20251003_205515.jpg" alt="Escultura da Maíra - Etapa 10" class="gallery-img">
-                        </div>
-                        <div class="gallery-img-container">
-                            <img src="assets/20251004_083642.jpg" alt="Escultura da Maíra - Etapa Final" class="gallery-img">
-                        </div>
+                    <!-- Fotos do processo, ordenadas por data/hora -->
+                    <a href="assets/20250928_195653.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20250928_195653.jpg" alt="Escultura da Maíra - Etapa 1">
+                    </a>
+                    <a href="assets/20250929_162240.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20250929_162240.jpg" alt="Escultura da Maíra - Etapa 2">
+                    </a>
+                    <a href="assets/20251001_122341.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251001_122341.jpg" alt="Escultura da Maíra - Etapa 3">
+                    </a>
+                    <a href="assets/20251001_193527.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251001_193527.jpg" alt="Escultura da Maíra - Etapa 4">
+                    </a>
+                    <a href="assets/20251002_185733.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251002_185733.jpg" alt="Escultura da Maíra - Etapa 5">
+                    </a>
+                    <a href="assets/20251003_104041.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251003_104041.jpg" alt="Escultura da Maíra - Etapa 6">
+                    </a>
+                    <a href="assets/20251003_120519.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251003_120519.jpg" alt="Escultura da Maíra - Etapa 7">
+                    </a>
+                    <a href="assets/20251003_145751.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251003_145751.jpg" alt="Escultura da Maíra - Etapa 8">
+                    </a>
+                    <a href="assets/20251003_205502.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251003_205502.jpg" alt="Escultura da Maíra - Etapa 9 (Foto do Botão)">
+                    </a>
+                    <a href="assets/20251003_205515.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251003_205515.jpg" alt="Escultura da Maíra - Etapa 10">
+                    </a>
+                    <a href="assets/20251004_083642.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251004_083642.jpg" alt="Escultura da Maíra - Etapa Final">
+                    </a>
 
-                    </div>
                 </div>
 
             </div>
         </section>
         
-        <!-- Contact Section -->
-        <section id="contato" class="mb-16">
-            <div class="card p-8 md:p-10 text-center">
-                <h2 class="section-title text-center mb-8">Entre em Contato</h2>
+        <!-- Contact Section (Atualizado para o ID do rodapé e cor de fundo) -->
+        <section id="contato-footer" class="mb-16">
+            <div class="card p-8 md:p-10 text-center bg-blue-50">
+                <h2 class="section-title text-center mb-8 text-blue-800">Entre em Contato</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
                 </p>
