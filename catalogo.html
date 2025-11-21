@@ -44,7 +44,7 @@
             transform: translateY(-8px);
             box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
         }
-        /* NOVO ESTILO: Garante que as miniaturas não sejam cortadas no catálogo */
+        /* ESTILO: Garante que as miniaturas não sejam cortadas no catálogo */
         .gallery-item-container {
             position: relative;
             padding-top: 100%; /* Garante aspecto 1:1 */
@@ -59,15 +59,11 @@
             height: 100%;
             object-fit: contain; /* ESSENCIAL: Ajusta a imagem inteira sem cortar */
             border-radius: 8px;
-            cursor: pointer;
             transition: transform 0.3s ease;
         }
         /* Efeito de hover na imagem */
         .gallery a:hover .gallery-img-content {
             transform: scale(1.05);
-        }
-        .hidden {
-            display: none;
         }
     </style>
 </head>
@@ -100,25 +96,24 @@
             <h2 class="section-title text-center mb-10">Caricaturas</h2>
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- 1. Maíra (NOVA PEÇA) - AGORA SÓ ABRE O MODAL AO CLICAR NA IMAGEM, O LINK DE NAVEGAÇÃO É IGNORADO. -->
-                <!-- ATENÇÃO: O HREF AINDA EXISTE, MAS SERÁ PREVENIDO PELO JS PARA ABRIR O MODAL -->
+                <!-- 1. Maíra - CLICAR AQUI VAI PARA maira.html -->
                 <a href="maira.html" class="card overflow-hidden">
                     <div class="gallery-item-container">
-                        <img src="assets/20251003_205502.jpg" data-full-img="assets/20251003_205502.jpg" alt="Miniatura de Maíra" class="gallery-img-content">
+                        <img src="assets/20251003_205502.jpg" alt="Miniatura de Maíra" class="gallery-img-content">
                     </div>
                 </a>
 
-                <!-- 2. Luciana e Jarbas -->
+                <!-- 2. Luciana e Jarbas - CLICAR AQUI VAI PARA luciana-jarbas.html -->
                 <a href="luciana-jarbas.html" class="card overflow-hidden">
                     <div class="gallery-item-container">
-                        <img src="assets/20250919_185121_2.jpg" data-full-img="assets/20250919_185121_2.jpg" alt="Miniatura de Luciana e Jarbas" class="gallery-img-content">
+                        <img src="assets/20250919_185121_2.jpg" alt="Miniatura de Luciana e Jarbas" class="gallery-img-content">
                     </div>
                 </a>
                 
-                <!-- 3. Regina -->
+                <!-- 3. Regina - CLICAR AQUI VAI PARA # (NÃO NAVEGA) -->
                 <a href="#" class="card overflow-hidden">
                     <div class="gallery-item-container">
-                        <img src="assets/Regina.jpg" data-full-img="assets/Regina.jpg" alt="Miniatura de Regina" class="gallery-img-content">
+                        <img src="assets/Regina.jpg" alt="Miniatura de Regina" class="gallery-img-content">
                     </div>
                 </a>
                 
@@ -136,7 +131,7 @@
                 <!-- Capivara Café -->
                 <a href="capivara-cafe.html" class="card overflow-hidden">
                     <div class="gallery-item-container">
-                        <img src="assets/20250919_131042.jpg" data-full-img="assets/20250919_131042.jpg" alt="Escultura da Capivara Tomando Café" class="gallery-img-content">
+                        <img src="assets/20250919_131042.jpg" alt="Escultura da Capivara Tomando Café" class="gallery-img-content">
                     </div>
                 </a>
             </div>
@@ -149,7 +144,7 @@
                 <!-- Capivara Lendo -->
                 <a href="capivara-lendo.html" class="card overflow-hidden">
                     <div class="gallery-item-container">
-                        <img src="assets/20250919_130630.jpg" data-full-img="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="gallery-img-content">
+                        <img src="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="gallery-img-content">
                     </div>
                 </a>
             </div>
@@ -162,7 +157,6 @@
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
                 </p>
-                <!-- Botões de Contato (NÃO tincham o bug, mas é bom verificar) -->
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
                         Enviar E-mail
@@ -175,59 +169,8 @@
         </section>
 
     </main>
-
-    <!-- Modal para visualização de imagem em tela cheia -->
-    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 hidden">
-        <img id="fullImage" src="" alt="Imagem ampliada" class="max-w-full max-h-full rounded-lg shadow-xl cursor-pointer">
-        <button id="closeModal" class="absolute top-4 right-4 text-white text-4xl font-light hover:text-gray-300 transition-colors">&times;</button>
-    </div>
-
-    <!-- JavaScript para a funcionalidade do modal e prevenção de bug -->
-    <script>
-        // Função para abrir o modal com a imagem clicada
-        function openModal(imageSrc) {
-            const modal = document.getElementById('imageModal');
-            const fullImage = document.getElementById('fullImage');
-            
-            // Usamos o atributo data-full-img para a imagem em tela cheia
-            fullImage.src = imageSrc; 
-            modal.classList.remove('hidden');
-        }
-
-        // Função para fechar o modal
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.classList.add('hidden');
-        }
-
-        // 1. Adiciona um event listener a todo o documento
-        document.addEventListener('DOMContentLoaded', () => {
-            const galleryLinks = document.querySelectorAll('.gallery a');
-
-            galleryLinks.forEach(link => {
-                // Adiciona um listener de clique em cada <a> dentro da galeria
-                link.addEventListener('click', function(event) {
-                    // Tenta encontrar a imagem dentro do link
-                    const image = this.querySelector('.gallery-img-content');
-                    
-                    // Verifica se a imagem existe e se o link não é o botão "Ver todas as Caricaturas"
-                    // (O botão "Ver todas..." não tem a classe gallery-img-content)
-                    if (image) {
-                        // **ESSENCIAL:** Previne a ação padrão do link (que é navegar para o href)
-                        event.preventDefault(); 
-                        
-                        // Abre o modal usando o src da imagem
-                        openModal(image.src);
-                    }
-                    // Se não tiver imagem, é o link "Ver todas as Caricaturas" e a navegação continua normalmente.
-                });
-            });
-
-            // 2. Event listener para fechar o modal ao clicar no botão "x" ou na imagem em tela cheia
-            document.getElementById('closeModal').onclick = closeModal;
-            document.getElementById('fullImage').onclick = closeModal;
-        });
-    </script>
+    
+    <!-- O código JavaScript foi removido completamente, assim como o HTML do Modal -->
 
     <!-- Footer -->
     <footer class="w-full text-center py-6 text-gray-500 text-sm">
