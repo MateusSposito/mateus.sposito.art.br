@@ -15,6 +15,7 @@
         .container {
             max-width: 900px;
         }
+        /* Estilo do título de seção padrão */
         .section-title {
             position: relative;
             font-size: 2.5rem;
@@ -22,17 +23,14 @@
             color: #1a237e; /* Azul Escuro */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        /* Ajustando a cor do after para combinar com a Holanda/Flores (Amarelo) */
         .section-title::after {
             content: '';
             display: block;
             width: 60px;
             height: 4px;
             background-color: #ffc107; /* Amarelo/Ouro */
-            margin-top: 8px;
+            margin: 8px auto 0; /* Centraliza a linha e ajusta a margem superior */
             border-radius: 2px;
-            margin-left: auto;
-            margin-right: auto;
         }
         .card {
             background-color: white;
@@ -100,7 +98,7 @@
         <!-- Obra Details Section -->
         <section class="mb-16">
             <div class="card p-8 md:p-10 text-center">
-                <!-- Título Atualizado -->
+                <!-- Título -->
                 <h2 class="section-title text-center mb-8">Holandesa com Flores</h2>
                 
                 <!-- Descrição da Peça -->
@@ -113,7 +111,7 @@
                 </p>
 
                 <!-- Dados Técnicos -->
-                <div class="my-8 text-left">
+                <div class="my-8 text-left max-w-lg mx-auto">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Detalhes Técnicos</h3>
                     <ul class="list-disc list-inside text-gray-700 space-y-2">
                         <li><span class="font-semibold text-blue-700">Medidas:</span> 15cm de altura (já com a base)</li>
@@ -124,57 +122,58 @@
                     </ul>
                 </div>
                 
-                <!-- Galeria de Fotos (CORRIGIDA E REORDENADA CRONOLOGICAMENTE) -->
-                <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
+                <!-- Galeria de Fotos (Em ordem cronológica e com fallback padrão) -->
+                <h3 class="text-2xl font-bold text-gray-800 mt-12 mb-6">Processo de Criação</h3>
+                <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                     
                     <!-- 1. 20250924_200732.jpg (24/Set) - Modelo em Resina Crua (Impressão 3D) -->
-                    <a href="20250924_200732.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="20250924_200732.jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1a237e/ffffff?text=20250924_200732.jpg';" alt="Modelo em resina UV crua, antes de receber as roupas e acessórios.">
+                    <a href="assets/20250924_200732.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20250924_200732.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Modelo em resina UV crua, antes de receber as roupas e acessórios.">
                     </a>
 
                     <!-- 2. 20250925_143235.jpg (25/Set) - Primeira fase do processo de resina -->
-                    <a href="20250925_143235.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="20250925_143235.jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1a237e/ffffff?text=20250925_143235.jpg';" alt="Primeira fase do processo de fundição em resina.">
+                    <a href="assets/20250925_143235.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20250925_143235.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Primeira fase do processo de fundição em resina.">
                     </a>
                     
                     <!-- 3. 20250925_152112.jpg (25/Set) - Segunda fase do processo de resina -->
-                    <a href="20250925_152112.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="20250925_152112.jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1a237e/ffffff?text=20250925_152112.jpg';" alt="Segunda fase do processo de fundição em resina.">
+                    <a href="assets/20250925_152112.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20250925_152112.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Segunda fase do processo de fundição em resina.">
                     </a>
 
                     <!-- 4. 20250925_201229.jpg (25/Set) - Peça em fase de montagem com pintura inicial -->
-                    <a href="20250925_201229.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="20250925_201229.jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1a237e/ffffff?text=20250925_201229.jpg';" alt="Peça em fase de montagem com as flores e pintura inicial.">
+                    <a href="assets/20250925_201229.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20250925_201229.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Peça em fase de montagem com as flores e pintura inicial.">
                     </a>
 
                     <!-- 5. 20250926_171145(1).jpg (26/Set) - Foto artística externa (Peça quase pronta) -->
-                    <a href="20250926_171145(1).jpg" target="_blank" class="card gallery-item-container">
-                        <img src="20250926_171145(1).jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1a237e/ffffff?text=20250926_171145(1).jpg';" alt="Foto artística da Holandesa finalizada em ambiente externo.">
+                    <a href="assets/20250926_171145(1).jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20250926_171145(1).jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Foto artística da Holandesa finalizada em ambiente externo.">
                     </a>
 
                     <!-- 6. 20250930_114821.jpg (30/Set) - Molde de silicone e base -->
-                    <a href="20250930_114821.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="20250930_114821.jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1a237e/ffffff?text=20250930_114821.jpg';" alt="Molde de silicone e base em resina durante o processo de fundição.">
+                    <a href="assets/20250930_114821.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20250930_114821.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Molde de silicone e base em resina durante o processo de fundição.">
                     </a>
                     
                     <!-- 7. 20251113_082543.jpg (13/Nov) - Conjunto Finalizado (Visão Geral) -->
-                    <a href="20251113_082543.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="20251113_082543.jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1a237e/ffffff?text=20251113_082543.jpg';" alt="Conjunto da primeira tiragem de 5 Holandesas finalizadas.">
+                    <a href="assets/20251113_082543.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251113_082543.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Conjunto da primeira tiragem de 5 Holandesas finalizadas.">
                     </a>
 
                     <!-- 8. 20251113_082628.jpg (13/Nov) - Detalhe da Pintura e Rosto -->
-                    <a href="20251113_082628.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="20251113_082628.jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1a237e/ffffff?text=20251113_082628.jpg';" alt="Close-up do rosto da Holandesa com cestinha de flores.">
+                    <a href="assets/20251113_082628.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251113_082628.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Close-up do rosto da Holandesa com cestinha de flores.">
                     </a>
                     
                     <!-- 9. 20251113_082807.jpg (13/Nov) - Detalhe do Rosto Lateral -->
-                    <a href="20251113_082807.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="20251113_082807.jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1a237e/ffffff?text=20251113_082807.jpg';" alt="Detalhe do rosto e olhos da Holandesa.">
+                    <a href="assets/20251113_082807.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251113_082807.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Detalhe do rosto e olhos da Holandesa.">
                     </a>
                     
                     <!-- 10. 20251113_082852.jpg (13/Nov) - Detalhe da Base e Holambra -->
-                    <a href="20251113_082852.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="20251113_082852.jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1a237e/ffffff?text=20251113_082852.jpg';" alt="Base da peça com o nome HOLAMBRA em relevo.">
+                    <a href="assets/20251113_082852.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251113_082852.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Base da peça com o nome HOLAMBRA em relevo.">
                     </a>
                     
                 </div>
