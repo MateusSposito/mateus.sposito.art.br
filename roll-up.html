@@ -15,6 +15,7 @@
         .container {
             max-width: 900px;
         }
+        /* Estilo do título de seção padrão do index.html */
         .section-title {
             position: relative;
             font-size: 2.5rem;
@@ -28,10 +29,8 @@
             width: 60px;
             height: 4px;
             background-color: #ffc107;
-            margin-top: 8px;
+            margin: 8px auto 0; /* Centraliza a linha e ajusta a margem superior */
             border-radius: 2px;
-            margin-left: auto;
-            margin-right: auto;
         }
         .card {
             background-color: white;
@@ -79,8 +78,10 @@
     <nav class="w-full flex justify-center mb-10">
         <div class="flex space-x-6 text-xl">
             <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
+            <!-- Mantém "Catálogo" como ativo nesta página de detalhe -->
             <a href="catalogo.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Catálogo</a>
-            <a href="#contato-footer" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
+            <!-- Link de Contato ajustado para #contato, seguindo o index.html -->
+            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
         </div>
     </nav>
 
@@ -89,9 +90,10 @@
         
         <!-- Botão de Voltar -->
         <div class="mb-8">
-            <a href="caricaturas.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-semibold">
+            <!-- Link provisório, ajuste conforme a sua estrutura real de catálogo (ex: catalogo.html) -->
+            <a href="catalogo.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-semibold">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                Voltar para Caricaturas
+                Voltar para o Catálogo
             </a>
         </div>
         
@@ -100,13 +102,13 @@
             <div class="card p-8 md:p-10 text-center">
                 <h2 class="section-title text-center mb-8">Roll up</h2>
                 
-                <!-- Descrição - TEXTO ORIGINAL RESTAURADO com links -->
+                <!-- Descrição -->
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     "Roll up" é uma peça em resina maciça encomendada pela Carina Martins (<a href="https://carinamartins.com.br/" target="_blank" class="text-blue-600 hover:text-blue-800 font-semibold underline">site</a> e <a href="https://www.instagram.com/carinamartinspilatesclassico/" target="_blank" class="text-blue-600 hover:text-blue-800 font-semibold underline">Instagram</a>) que passou as orientações técnicas e citou a Romana Kryzanowska (que foi aluna do próprio Joseph Pilates) como referência por ter divulgado o método Pilates pelo mundo durante muitos anos.
                 </p>
 
                 <!-- Dados Técnicos -->
-                <div class="my-8 text-left">
+                <div class="my-8 text-left max-w-lg mx-auto">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Detalhes Técnicos</h3>
                     <ul class="list-disc list-inside text-gray-700 space-y-2">
                         <li><span class="font-semibold text-blue-700">Medidas:</span> 9cm de altura, 11 cm de largura e 13cm de pronfundidade</li>
@@ -116,55 +118,68 @@
                     </ul>
                 </div>
                 
-                <!-- Galeria de Fotos do Processo (Segue o novo padrão: direto para as fotos) -->
-                <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
-                    <!-- Ordem cronológica das fotos fornecidas, mantendo o aspecto de "etapas" -->
-                    
+                <!-- Galeria de Fotos do Processo -->
+                <h3 class="text-2xl font-bold text-gray-800 mt-12 mb-6">Processo de Criação</h3>
+                <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                     <!-- Etapa de Escultura (Sem pintura) -->
                     <a href="assets/20251003_164446.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251003_164446.jpg" alt="Miniatura Roll up sem pintura - Perfil">
+                        <img src="assets/20251003_164446.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Miniatura Roll up sem pintura - Perfil">
                     </a>
                     <a href="assets/20251009_155703.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251009_155703.jpg" alt="Miniatura Roll up sem pintura - Close-up da mão">
+                        <img src="assets/20251009_155703.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Miniatura Roll up sem pintura - Close-up da mão">
                     </a>
                     <a href="assets/20251009_181507.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251009_181507.jpg" alt="Miniatura Roll up sem pintura - Close-up do rosto">
+                        <img src="assets/20251009_181507.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Miniatura Roll up sem pintura - Close-up do rosto">
                     </a>
 
                     <!-- Etapa Final (Pintura) -->
                     <a href="assets/20251011_154039.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251011_154039.jpg" alt="Miniatura Roll up finalizada - Frente">
+                        <img src="assets/20251011_154039.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Miniatura Roll up finalizada - Frente">
                     </a>
                     <a href="assets/20251011_154047.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251011_154047.jpg" alt="Miniatura Roll up finalizada - Outro ângulo">
+                        <img src="assets/20251011_154047.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Miniatura Roll up finalizada - Outro ângulo">
                     </a>
                     <a href="assets/20251011_154056.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251011_154056.jpg" alt="Miniatura Roll up finalizada - Perfil Esquerdo">
+                        <img src="assets/20251011_154056.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Miniatura Roll up finalizada - Perfil Esquerdo">
                     </a>
                     <a href="assets/20251011_154103.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251011_154103.jpg" alt="Miniatura Roll up finalizada - Traseira">
+                        <img src="assets/20251011_154103.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Miniatura Roll up finalizada - Traseira">
                     </a>
                     <a href="assets/20251011_154113.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251011_154113.jpg" alt="Miniatura Roll up finalizada - Perfil Direito">
+                        <img src="assets/20251011_154113.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Placeholder';" alt="Miniatura Roll up finalizada - Perfil Direito">
                     </a>
                 </div>
 
             </div>
         </section>
 
-        <!-- Contact Section (Footer) -->
-        <section id="contato-footer" class="mb-16">
-            <div class="card p-8 md:p-10 text-center bg-blue-50">
-                <h2 class="section-title text-center mb-8 text-blue-800">Entre em Contato</h2>
+        <!-- Contact Section (CORRIGIDA para o padrão do index.html) -->
+        <section id="contato" class="mb-16">
+            <div class="card p-8 md:p-10 text-center">
+                <h2 class="section-title text-center mb-8">Entre em Contato</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
+                    Para encomendas personalizadas ou dúvidas, entre em contato diretamente. Se deseja adquirir uma peça pronta, visite as lojas online abaixo.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                
+                <!-- E-MAIL -->
+                <div class="mb-8">
+                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
                         Enviar E-mail
                     </a>
-                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
-                        Visitar Loja
+                </div>
+
+                <!-- ONDE COMPRAR (Lojas Online) -->
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Onde Comprar</h3>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    
+                    <!-- Mercado Livre -->
+                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
+                        Mercado Livre
+                    </a>
+                    
+                    <!-- Amazon -->
+                    <a href="https://www.amazon.com.br/s?me=ANLB1TOU9RKWJ&ref=sf_seller_app_share_new" target="_blank" class="bg-gray-800 hover:bg-black text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
+                        Amazon
                     </a>
                 </div>
             </div>
