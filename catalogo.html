@@ -100,24 +100,25 @@
             <h2 class="section-title text-center mb-10">Caricaturas</h2>
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- 1. Maíra (NOVA PEÇA - COLOCADA EM PRIMEIRO) -->
+                <!-- 1. Maíra (NOVA PEÇA) - AGORA SÓ ABRE O MODAL AO CLICAR NA IMAGEM, O LINK DE NAVEGAÇÃO É IGNORADO. -->
+                <!-- ATENÇÃO: O HREF AINDA EXISTE, MAS SERÁ PREVENIDO PELO JS PARA ABRIR O MODAL -->
                 <a href="maira.html" class="card overflow-hidden">
                     <div class="gallery-item-container">
-                        <img src="assets/20251003_205502.jpg" alt="Miniatura de Maíra" class="gallery-img-content" onclick="openModal(this.src)">
+                        <img src="assets/20251003_205502.jpg" data-full-img="assets/20251003_205502.jpg" alt="Miniatura de Maíra" class="gallery-img-content">
                     </div>
                 </a>
 
                 <!-- 2. Luciana e Jarbas -->
                 <a href="luciana-jarbas.html" class="card overflow-hidden">
                     <div class="gallery-item-container">
-                        <img src="assets/20250919_185121_2.jpg" alt="Miniatura de Luciana e Jarbas" class="gallery-img-content" onclick="openModal(this.src)">
+                        <img src="assets/20250919_185121_2.jpg" data-full-img="assets/20250919_185121_2.jpg" alt="Miniatura de Luciana e Jarbas" class="gallery-img-content">
                     </div>
                 </a>
                 
                 <!-- 3. Regina -->
                 <a href="#" class="card overflow-hidden">
                     <div class="gallery-item-container">
-                        <img src="assets/Regina.jpg" alt="Miniatura de Regina" class="gallery-img-content" onclick="openModal(this.src)">
+                        <img src="assets/Regina.jpg" data-full-img="assets/Regina.jpg" alt="Miniatura de Regina" class="gallery-img-content">
                     </div>
                 </a>
                 
@@ -135,7 +136,7 @@
                 <!-- Capivara Café -->
                 <a href="capivara-cafe.html" class="card overflow-hidden">
                     <div class="gallery-item-container">
-                        <img src="assets/20250919_131042.jpg" alt="Escultura da Capivara Tomando Café" class="gallery-img-content" onclick="openModal(this.src)">
+                        <img src="assets/20250919_131042.jpg" data-full-img="assets/20250919_131042.jpg" alt="Escultura da Capivara Tomando Café" class="gallery-img-content">
                     </div>
                 </a>
             </div>
@@ -148,45 +149,85 @@
                 <!-- Capivara Lendo -->
                 <a href="capivara-lendo.html" class="card overflow-hidden">
                     <div class="gallery-item-container">
-                        <img src="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="gallery-img-content" onclick="openModal(this.src)">
+                        <img src="assets/20250919_130630.jpg" data-full-img="assets/20250919_130630.jpg" alt="Escultura da Capivara Lendo" class="gallery-img-content">
                     </div>
                 </a>
             </div>
         </section>
 
-    <!-- Contact Section (ATUALIZADA) -->
+        <!-- Contact Section -->
         <section id="contato" class="mb-16">
             <div class="card p-8 md:p-10 text-center">
                 <h2 class="section-title text-center mb-8">Entre em Contato</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    Para encomendas personalizadas ou dúvidas, entre em contato diretamente. Se deseja adquirir uma peça pronta, visite as lojas online abaixo.
+                    Para encomendar uma miniatura ou saber mais sobre meu trabalho, entre em contato ou visite minha loja online.
                 </p>
-                
-                <!-- E-MAIL -->
-                <div class="mb-8">
-                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
+                <!-- Botões de Contato (NÃO tincham o bug, mas é bom verificar) -->
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
                         Enviar E-mail
                     </a>
-                </div>
-
-                <!-- ONDE COMPRAR (Lojas Online) -->
-                <h3 class="text-xl font-bold text-gray-800 mb-4">Onde Comprar</h3>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    
-                    <!-- Mercado Livre -->
-                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
-                        Mercado Livre
-                    </a>
-                    
-                    <!-- Amazon -->
-                    <a href="https://www.amazon.com.br/s?me=ANLB1TOU9RKWJ&ref=sf_seller_app_share_new" target="_blank" class="bg-gray-800 hover:bg-black text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
-                        Amazon
+                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
+                        Visitar Loja
                     </a>
                 </div>
             </div>
         </section>
 
     </main>
+
+    <!-- Modal para visualização de imagem em tela cheia -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 hidden">
+        <img id="fullImage" src="" alt="Imagem ampliada" class="max-w-full max-h-full rounded-lg shadow-xl cursor-pointer">
+        <button id="closeModal" class="absolute top-4 right-4 text-white text-4xl font-light hover:text-gray-300 transition-colors">&times;</button>
+    </div>
+
+    <!-- JavaScript para a funcionalidade do modal e prevenção de bug -->
+    <script>
+        // Função para abrir o modal com a imagem clicada
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const fullImage = document.getElementById('fullImage');
+            
+            // Usamos o atributo data-full-img para a imagem em tela cheia
+            fullImage.src = imageSrc; 
+            modal.classList.remove('hidden');
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+        }
+
+        // 1. Adiciona um event listener a todo o documento
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryLinks = document.querySelectorAll('.gallery a');
+
+            galleryLinks.forEach(link => {
+                // Adiciona um listener de clique em cada <a> dentro da galeria
+                link.addEventListener('click', function(event) {
+                    // Tenta encontrar a imagem dentro do link
+                    const image = this.querySelector('.gallery-img-content');
+                    
+                    // Verifica se a imagem existe e se o link não é o botão "Ver todas as Caricaturas"
+                    // (O botão "Ver todas..." não tem a classe gallery-img-content)
+                    if (image) {
+                        // **ESSENCIAL:** Previne a ação padrão do link (que é navegar para o href)
+                        event.preventDefault(); 
+                        
+                        // Abre o modal usando o src da imagem
+                        openModal(image.src);
+                    }
+                    // Se não tiver imagem, é o link "Ver todas as Caricaturas" e a navegação continua normalmente.
+                });
+            });
+
+            // 2. Event listener para fechar o modal ao clicar no botão "x" ou na imagem em tela cheia
+            document.getElementById('closeModal').onclick = closeModal;
+            document.getElementById('fullImage').onclick = closeModal;
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="w-full text-center py-6 text-gray-500 text-sm">
