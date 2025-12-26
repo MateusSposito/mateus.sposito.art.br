@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+        }
+        /* Estilo do título de seção padrão */
+        .section-title {
+            position: relative;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a237e; /* Azul Escuro */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #ffc107; /* Amarelo/Ouro */
+            margin: 8px auto 0; /* Centraliza a linha e ajusta a margem superior */
+            border-radius: 2px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        /* Estilo para as miniaturas na galeria */
+        .gallery-item-container {
+            position: relative;
+            padding-top: 100%; /* Mantém a proporção 1:1 */
+            background-color: #e2e8f0; 
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .gallery-item-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Garante que a imagem inteira seja vista, sem crop */
+            transition: transform 0.3s ease;
+        }
+        .gallery-item-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
+
+    <!-- Header Section (Padrão) -->
+    <header class="w-full flex justify-center py-6 mb-12">
+        <div class="flex items-center space-x-4">
+            <!-- Ícone -->
+            <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15v-5H8v5h3zm4-5h-3v5h3v-5zM12 5a2 2 0 012 2v2H10V7a2 2 0 012-2z"/>
+            </svg>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900">Mateus Sposito</h1>
+        </div>
+    </header>
+
+    <!-- Navigation (Padrão) -->
+    <nav class="w-full flex justify-center mb-10">
+        <div class="flex space-x-6 text-xl">
+            <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
+            <a href="catalogo.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Catálogo</a>
+            <a href="caricaturas.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Caricaturas</a>
+            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="w-full container">
+        
+        <!-- Botão de Voltar -->
+        <div class="mb-8">
+            <a href="caricaturas.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-semibold">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Voltar para Caricaturas
+            </a>
+        </div>
+        
+        <!-- Obra Details Section -->
+        <section class="mb-16">
+            <div class="card p-8 md:p-10 text-center">
+                <!-- Título -->
+                <h2 class="section-title text-center mb-8">Davi</h2>
+                
+                <!-- Descrição da Peça -->
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Esta peça faz parte da coleção Netos do Demi para o Natal de 2025. O objetivo foi retratar o Davi como o Wolverine, um de seus personagens favoritos.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    A criação uniu duas referências: a expressão facial foi baseada em uma foto do Davi usando uma camiseta com heróis da Marvel, enquanto o traje foi inspirado pelo fato de ele adorar usar uma fantasia do Wolverine.
+                </p>
+
+                <!-- Dados Técnicos -->
+                <div class="my-8 text-left max-w-lg mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Detalhes Técnicos</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><span class="font-semibold text-blue-700">Medidas:</span> 12cm de altura</li>
+                        <li><span class="font-semibold text-blue-700">Peso:</span> 39g</li>
+                        <li><span class="font-semibold text-blue-700">Material:</span> Resina UV</li>
+                        <li><span class="font-semibold text-blue-700">Acabamento:</span> Tinta e verniz acrílico.</li>
+                    </ul>
+                </div>
+                
+                <!-- Galeria de Fotos (Em ordem cronológica e usando os nomes dos arquivos enviados) -->
+                <h3 class="text-2xl font-bold text-gray-800 mt-12 mb-6">Processo de Criação (Outubro a Novembro de 2025)</h3>
+                <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    
+                    <!-- 1. Foto 01 -->
+                    <a href="assets/20251018_161349.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251018_161349.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Agosto%20-%20Rascunho%20Inicial';" alt="Imprimindo o Davi.">
+                    </a>
+
+                    <!-- 2. Foto 02 -->
+                    <a href="assets/20251019_203608.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251019_203608.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Outubro%20-%20Detalhes%20no%20Rosto';" alt="Iniciando a pintura">
+                    </a>
+                    
+                    <!-- 3. Foto 03 -->
+                    <a href="assets/20251023_173643.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251023_173643.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Outubro%20-%20Pintura%20Base';" alt="Pintura do Davi.">
+                    </a>
+
+                    <!-- 4. Foto 04 -->
+                    <a href="assets/20251030_172717.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251030_172717.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Outubro%20-%20Pintura%20de%20Cabelo';" alt="Processo de pintura.">
+                    </a>
+                    
+                    <!-- 5. Foto 05 -->
+                    <a href="assets/20251031_155038.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251031_155038.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Novembro%20-%20Quase%20Pronta';" alt="Processo de pintura.">
+                    </a>
+                    
+                    <!-- 6. Foto 06 -->
+                    <a href="assets/20251130_152259.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251130_152259.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Novembro%20-%20Peça%20Finalizada';" alt="Peça finalizada!">
+                    </a>
+
+                  <!-- 7. Foto 07 -->
+                    <a href="assets/20251130_152316.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251130_152316.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Novembro%20-%20Peça%20Finalizada';" alt="Perfil da peça finalizada.">
+                    </a>
+
+                  <!-- 8. Foto 08 -->
+                    <a href="assets/20251130_152324.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251130_152324.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Novembro%20-%20Peça%20Finalizada';" alt="Davi finalizado visto por trás.">
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section (Padrão) -->
+        <section id="contato" class="mb-16">
+            <div class="card p-8 md:p-10 text-center">
+                <h2 class="section-title text-center mb-8 text-blue-800">Entre em Contato</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Para encomendas personalizadas ou dúvidas, entre em contato diretamente. Se deseja adquirir uma peça pronta, visite as lojas online abaixo.
+                </p>
+                
+                <!-- E-MAIL -->
+                <div class="mb-8">
+                    <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
+                        Enviar E-mail
+                    </a>
+                </div>
+
+                <!-- ONDE COMPRAR (Lojas Online) -->
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Onde Comprar</h3>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    
+                    <!-- Mercado Livre -->
+                    <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
+                        Mercado Livre
+                    </a>
+                    
+                    <!-- Amazon -->
+                    <a href="https://www.amazon.com.br/s?me=ANLB1TOU9RKWJ&ref=sf_seller_app_share_new" target="_blank" class="bg-gray-800 hover:bg-black text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
+                        Amazon
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Simples (Padrão) -->
+    <footer class="w-full text-center py-6 text-gray-500 text-sm">
+        <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
+    </footer>
+
+</body>
+</html>
