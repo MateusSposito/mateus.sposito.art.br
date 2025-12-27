@@ -12,7 +12,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas</title>
+    <title>Lucas - Caricatura Personalizada</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -24,12 +24,11 @@
         .container {
             max-width: 900px;
         }
-        /* Estilo do título de seção padrão */
         .section-title {
             position: relative;
             font-size: 2.5rem;
             font-weight: 700;
-            color: #1a237e; /* Azul Escuro */
+            color: #1a237e;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         .section-title::after {
@@ -37,7 +36,7 @@
             display: block;
             width: 60px;
             height: 4px;
-            background-color: #ffc107; /* Amarelo/Ouro */
+            background-color: #ffc107;
             margin: 8px auto 0;
             border-radius: 2px;
         }
@@ -45,19 +44,17 @@
             background-color: white;
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
         }
         /* Estilo para as miniaturas na galeria */
         .gallery-item-container {
             position: relative;
-            padding-top: 100%; /* Mantém a proporção 1:1 */
+            padding-top: 100%; /* Proporção 1:1 */
             background-color: #e2e8f0; 
             overflow: hidden;
             border-radius: 8px;
-            cursor: pointer;
         }
-        /* Regra específica para IMAGENS */
+        /* Regra para IMAGENS */
         .gallery-item-container img {
             position: absolute;
             top: 0;
@@ -67,15 +64,22 @@
             object-fit: contain;
             transition: transform 0.3s ease;
         }
-        /* Regra específica para o VÍDEO não "sumir" */
-        .gallery-item-container video {
+        /* Regra para VÍDEO - Garantindo interatividade */
+        .video-wrapper {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ajustado para preencher o quadrado da galeria */
+            z-index: 10;
+        }
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
             background: #000;
+            cursor: pointer; /* Indica que é clicável */
         }
         .gallery-item-container:hover img {
             transform: scale(1.05);
@@ -84,7 +88,7 @@
 </head>
 <body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
 
-    <!-- Header Section (Padrão) -->
+    <!-- Header Section -->
     <header class="w-full flex justify-center py-6 mb-12">
         <div class="flex items-center space-x-4">
             <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
@@ -94,7 +98,7 @@
         </div>
     </header>
 
-    <!-- Navigation (Padrão) -->
+    <!-- Navigation -->
     <nav class="w-full flex justify-center mb-10">
         <div class="flex space-x-6 text-xl">
             <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
@@ -107,7 +111,6 @@
     <!-- Main Content -->
     <main class="w-full container">
         
-        <!-- Botão de Voltar -->
         <div class="mb-8">
             <a href="caricaturas.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-semibold">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
@@ -115,13 +118,10 @@
             </a>
         </div>
         
-        <!-- Obra Details Section -->
         <section class="mb-16">
             <div class="card p-8 md:p-10 text-center">
-                <!-- Título -->
                 <h2 class="section-title text-center mb-8">Lucas</h2>
                 
-                <!-- Descrição da Peça -->
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                     Esta peça faz parte da coleção Netos do Demi para o Natal de 2025. O objetivo foi retratar o Lucas expressando sua paixão por corridas de carro.
                 </p>
@@ -129,7 +129,6 @@
                     A criação uniu duas referências: a pose e o traje foram inspirados em uma foto do Lucas no Autódromo de Interlagos usando um macacão vermelho, enquanto o capacete amarelo com listras verdes e azuis foi incluído por ele ser um grande fã do Ayrton Senna.
                 </p>
 
-                <!-- Dados Técnicos -->
                 <div class="my-8 text-left max-w-lg mx-auto">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Detalhes Técnicos</h3>
                     <ul class="list-disc list-inside text-gray-700 space-y-2">
@@ -140,54 +139,49 @@
                     </ul>
                 </div>
                 
-                <!-- Galeria -->
                 <h3 class="text-2xl font-bold text-gray-800 mt-12 mb-6">Processo de Criação (Outubro a Novembro de 2025)</h3>
                 <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                     
-                    <!-- 1. VÍDEO (Inserido como primeiro item) -->
+                    <!-- ITEM DE VÍDEO CORRIGIDO -->
                     <div class="card gallery-item-container">
-                        <video 
-                            src="assets/Lucas01.mp4" 
-                            poster="assets/Lucas01.jpg"
-                            controls 
-                            playsinline>
-                            Seu navegador não suporta vídeos.
-                        </video>
+                        <div class="video-wrapper">
+                            <video 
+                                controls 
+                                preload="metadata" 
+                                poster="assets/Lucas01.jpg">
+                                <source src="assets/Lucas01.mp4" type="video/mp4">
+                                Seu navegador não suporta vídeos.
+                            </video>
+                        </div>
                     </div>
 
-                    <!-- 2. Foto 01 -->
+                    <!-- FOTOS DA GALERIA -->
                     <a href="assets/20251110_114408.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251110_114408.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Lixando';" alt="Lixando.">
+                        <img src="assets/20251110_114408.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Processo';" alt="Processo">
                     </a>
 
-                    <!-- 3. Foto 02 -->
                     <a href="assets/20251117_181013.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251117_181013.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Pintura';" alt="Iniciando a pintura.">
+                        <img src="assets/20251117_181013.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Processo';" alt="Processo">
                     </a>
                     
-                    <!-- 4. Foto 03 -->
                     <a href="assets/20251118_102431.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251118_102431.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Lupa';" alt="Pintando com auxílio da lupa.">
+                        <img src="assets/20251118_102431.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Processo';" alt="Processo">
                     </a>
 
-                    <!-- 5. Foto 04 -->
                     <a href="assets/20251118_185359.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251118_185359.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Finalizando';" alt="Finalizando a pintura.">
+                        <img src="assets/20251118_185359.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Processo';" alt="Processo">
                     </a>
                     
-                    <!-- 6. Foto 05 -->
                     <a href="assets/20251130_152536.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251130_152536.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Pronta';" alt="Vista frontal finalizado.">
+                        <img src="assets/20251130_152536.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Finalizado';" alt="Finalizado">
                     </a>
 
-                    <!-- 7. Foto 06 -->
                     <a href="assets/20251130_152624.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251130_152624.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Trás';" alt="Vista por trás.">
+                        <img src="assets/20251130_152624.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Finalizado';" alt="Finalizado">
                     </a>
 
-                    <!-- 8. Foto 07 -->
                     <a href="assets/20251130_152631.jpg" target="_blank" class="card gallery-item-container">
-                        <img src="assets/20251130_152631.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Perfil';" alt="Perfil da peça finalizada.">
+                        <img src="assets/20251130_152631.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Finalizado';" alt="Finalizado">
                     </a>
 
                 </div>
@@ -195,7 +189,7 @@
             </div>
         </section>
 
-        <!-- Contact Section (Padrão) -->
+        <!-- Contact Section -->
         <section id="contato" class="mb-16">
             <div class="card p-8 md:p-10 text-center">
                 <h2 class="section-title text-center mb-8 text-blue-800">Entre em Contato</h2>
@@ -203,14 +197,12 @@
                     Para encomendas personalizadas ou dúvidas, entre em contato diretamente. Se deseja adquirir uma peça pronta, visite as lojas online abaixo.
                 </p>
                 
-                <!-- E-MAIL -->
                 <div class="mb-8">
                     <a href="mailto:mateus@sposito.art.br" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
                         Enviar E-mail
                     </a>
                 </div>
 
-                <!-- ONDE COMPRAR -->
                 <h3 class="text-xl font-bold text-gray-800 mb-4">Onde Comprar</h3>
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="https://lista.mercadolivre.com.br/_CustId_473927" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
@@ -225,7 +217,6 @@
 
     </main>
 
-    <!-- Footer Simples (Padrão) -->
     <footer class="w-full text-center py-6 text-gray-500 text-sm">
         <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
     </footer>
