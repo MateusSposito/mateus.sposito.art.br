@@ -12,7 +12,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas</title>
+    <title>Lucas - Mateus Sposito</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -47,27 +47,45 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
         }
+        
+        /* Container para manter proporção 1:1 nas imagens */
         .gallery-item-container {
             position: relative;
-            padding-top: 100%; /* Proporção 1:1 */
+            padding-top: 100%; 
             background-color: #e2e8f0; 
             overflow: hidden;
             border-radius: 8px;
-            cursor: pointer;
         }
-        /* Ajuste para aplicar o hover tanto em imagens quanto em vídeos */
-        .gallery-item-container img, 
-        .gallery-item-container video {
+        
+        .gallery-item-container img {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             transition: transform 0.3s ease;
         }
-        .gallery-item-container:hover img,
-        .gallery-item-container:hover video {
+
+        /* Container especial para o vídeo para não quebrar o layout */
+        .video-item-container {
+            position: relative;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-item-container video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gallery-item-container:hover img {
             transform: scale(1.05);
         }
     </style>
@@ -125,11 +143,11 @@
                 
                 <h3 class="text-2xl font-bold text-gray-800 mt-12 mb-6">Processo de Criação (Outubro a Novembro de 2025)</h3>
                 
-                <!-- Galeria Corrigida (Vídeo dentro da Grid) -->
+                <!-- Galeria com Grid Responsiva -->
                 <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                     
-                    <!-- 1. VÍDEO (Inserido como primeiro item da galeria) -->
-                    <div class="card gallery-item-container">
+                    <!-- 1. VÍDEO (Corrigido) -->
+                    <div class="card video-item-container aspect-square">
                         <video 
                             src="assets/Lucas01.mp4" 
                             poster="assets/Lucas01.jpg"
