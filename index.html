@@ -59,6 +59,10 @@
             background-color: #e2e8f0;
             border-radius: 8px;
             overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item-container:hover {
+            transform: scale(1.03);
         }
         .gallery-img {
             position: absolute;
@@ -66,7 +70,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 8px;
         }
     </style>
@@ -74,69 +78,104 @@
 
 <body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
 
-    <!-- Cabeçalho -->
+    <!-- Header Section -->
     <header class="w-full flex justify-center py-6 mb-12">
         <div class="flex items-center space-x-4">
+            <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15v-5H8v5h3zm4-5h-3v5h3v-5zM12 5a2 2 0 012 2v2H10V7a2 2 0 012-2z"/>
+            </svg>
             <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 text-center">Mateus Sposito</h1>
         </div>
     </header>
 
-    <!-- Navegação -->
+    <!-- Navigation -->
     <nav class="w-full flex justify-center mb-10">
         <div class="flex space-x-6 text-xl">
             <a href="index.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Início</a>
-            <a href="catalogo.html" class="text-gray-700 hover:text-blue-800 transition-colors">Catálogo</a>
-            <a href="#contato" class="text-gray-700 hover:text-blue-800 transition-colors">Contato</a>
+            <a href="catalogo.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Catálogo</a>
+            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
         </div>
     </nav>
 
-    <!-- Conteúdo Principal -->
+    <!-- Main Content -->
     <main class="container-max">
         
-        <!-- Sobre -->
+        <!-- Hero and About Section -->
         <section class="mb-16">
             <div class="card p-8 md:p-10 flex flex-col items-center">
-                <img src="assets/MateusPerfil.jpg" alt="Foto de Mateus Sposito" class="w-48 h-48 rounded-full mb-6 object-cover shadow-lg" onerror="this.src='https://via.placeholder.com/150'">
+                <img src="assets/MateusPerfil.jpg" alt="Foto de Mateus Sposito" class="w-48 h-48 rounded-full mb-6 object-cover shadow-lg">
                 <p class="text-lg text-gray-700 leading-relaxed mb-6 text-center">
                     Da animação 3D ao toque artesanal em resina, minha jornada é uma fusão de tecnologia e arte.
                 </p>
             </div>
         </section>
 
-        <!-- Galeria -->
+        <!-- Gallery Section -->
         <section id="portfolio" class="mb-16">
             <h2 class="section-title mb-10">Miniaturas Recentes</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Itens da Galeria -->
-                <div class="card">
+
+                <!-- Tio Demi Turista -->
+                <a href="demi_turista.html" class="card p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20260102_084244.jpg" alt="Miniatura" class="gallery-img" onerror="this.src='https://via.placeholder.com/300'">
+                        <img src="assets/20260102_084244.jpg" alt="Tio Demi Turista" class="gallery-img">
                     </div>
-                </div>
-                <div class="card">
+                </a>
+                 
+                <!-- Tio Demi Cagando -->
+                <a href="demi_cagando.html" class="card p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251130_153443.jpg" alt="Miniatura" class="gallery-img" onerror="this.src='https://via.placeholder.com/300'">
+                        <img src="assets/20251130_153443.jpg" alt="Tio Demi Cagando" class="gallery-img">
                     </div>
-                </div>
-                <div class="card">
+                </a>
+
+                <!-- Zoey -->
+                <a href="zoey.html" class="card p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251224_223845.jpg" alt="Miniatura" class="gallery-img" onerror="this.src='https://via.placeholder.com/300'">
+                        <img src="assets/20251224_223845.jpg" alt="Zoey" class="gallery-img">
                     </div>
-                </div>
+                </a>
+                 
+                <!-- Shanks -->
+                <a href="shanks.html" class="card p-0">
+                    <div class="gallery-item-container">
+                        <img src="assets/20251224_224012.jpg" alt="Shanks" class="gallery-img">
+                    </div>
+                </a>
+                 
+                <!-- Pedro -->
+                <a href="pedro02.html" class="card p-0">
+                    <div class="gallery-item-container">
+                        <img src="assets/20251130_151843.jpg" alt="Pedro" class="gallery-img">
+                    </div>
+                </a>
+                 
+                <!-- Nina -->
+                <a href="nina.html" class="card p-0">
+                    <div class="gallery-item-container">
+                        <img src="assets/20251130_152401.jpg" alt="Nina" class="gallery-img">
+                    </div>
+                </a>
+
+                <!-- Link Catálogo -->
+                <a href="catalogo.html" class="card bg-blue-100 flex items-center justify-center p-4 text-center text-blue-800 font-semibold text-lg hover:bg-blue-200 transition-colors">
+                    Catálogo Completo
+                </a>
+                                        
             </div>
         </section>
 
-        <!-- Seção de Contato Dinâmica -->
+        <!-- Placeholder onde o componente de contato será injetado -->
         <div id="contato-placeholder"></div>
 
     </main>
 
-    <!-- Rodapé -->
-    <footer class="w-full text-center py-6 text-gray-500 text-sm mt-10">
+    <!-- Footer -->
+    <footer class="w-full text-center py-6 text-gray-500 text-sm">
         <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
     </footer>
 
-    <!-- Carregamento do Componente -->
+    <!-- Scripts -->
     <script src="contato-component.js"></script>
 </body>
 </html>
