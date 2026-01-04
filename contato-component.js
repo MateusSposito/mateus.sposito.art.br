@@ -27,7 +27,7 @@ function renderContato() {
                     <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                         
                         <!-- Mercado Livre -->
-                        <a href="https://lista.mercadolivre.com.br/_CustId_473927?item_id=MLB4160436087&category_id=MLB186814&seller_id=473927&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg inline-block w-full sm:w-auto">
+                        <a href="https://lista.mercadolivre.com.br/_CustId_3092494021?item_id=MLB6106482676&category_id=MLB412060&seller_id=3092494021&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic">
                             Mercado Livre
                         </a>
                         
