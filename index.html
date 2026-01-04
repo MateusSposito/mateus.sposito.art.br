@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4PM6ZY3ZN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-G4PM6ZY3ZN');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4PM6ZY3ZN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-G4PM6ZY3ZN');
+    </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,8 +37,10 @@
             width: 60px;
             height: 4px;
             background-color: #ffc107;
-            margin: 8px auto 0;
+            margin-top: 8px;
             border-radius: 2px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .card {
             background-color: white;
@@ -53,31 +53,29 @@
             transform: translateY(-8px);
             box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
         }
-        /* Novo estilo de galeria para evitar cropping */
         .gallery-item-container {
             position: relative;
-            padding-top: 100%; /* Cria um container quadrado (1:1 ratio) */
-            background-color: #e2e8f0; /* Fundo para áreas não preenchidas */
-            border-radius: 8px;
+            padding-top: 100%;
+            background-color: #e2e8f0; 
             overflow: hidden;
-            transition: transform 0.3s ease;
         }
-        .gallery-item-container:hover {
-            transform: scale(1.03);
-        }
-        .gallery-img {
+        .gallery-img-content {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ajusta a imagem dentro do container sem cortar */
+            object-fit: contain;
             border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .gallery a:hover .gallery-img-content {
+            transform: scale(1.05);
         }
     </style>
 </head>
-    
-   <body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
+
+<body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
 
     <!-- Header Section -->
     <header class="w-full flex justify-center py-6 mb-12">
@@ -101,10 +99,10 @@
     <!-- Main Content -->
     <main class="w-full container">
         
-        <!-- Hero and About Section -->
+        <!-- Hero Section -->
         <section class="mb-16">
             <div class="card p-8 md:p-10 flex flex-col items-center">
-                <img src="assets/MateusPerfil.jpg" alt="Foto de Mateus Sposito, artista de miniaturas" class="w-48 h-48 rounded-full mb-6 object-cover shadow-lg">
+                <img src="assets/MateusPerfil.jpg" alt="Foto de Mateus Sposito" class="w-48 h-48 rounded-full mb-6 object-cover shadow-lg">
                 <p class="text-lg text-gray-700 leading-relaxed mb-6 text-center">
                     Da animação 3D ao toque artesanal em resina, minha jornada é uma fusão de tecnologia e arte.
                 </p>
@@ -116,71 +114,65 @@
             <h2 class="section-title text-center mb-10">Miniaturas Recentes</h2>
             <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                         <!-- Tio Demi Turista -->
-                <a href="demi_turista.html" class="card overflow-hidden p-0">
+                <!-- Tio Demi Turista -->
+                <a href="demi_turista.html" class="card p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20260102_084244.jpg" alt="Tio Demi Turista" class="gallery-img">
+                        <img src="assets/20260102_084244.jpg" alt="Tio Demi Turista" class="gallery-img-content">
                     </div>
                 </a>
                  
-                     <!-- Tio Demi Cagando -->
-                <a href="demi_cagando.html" class="card overflow-hidden p-0">
+                <!-- Tio Demi Cagando -->
+                <a href="demi_cagando.html" class="card p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251130_153443.jpg" alt="Tio Demi Cagando" class="gallery-img">
+                        <img src="assets/20251130_153443.jpg" alt="Tio Demi Cagando" class="gallery-img-content">
                     </div>
                 </a>
 
-                  <!-- Zoey -->
-                <a href="zoey.html" class="card overflow-hidden p-0">
+                <!-- Zoey -->
+                <a href="zoey.html" class="card p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251224_223845.jpg" alt="Miniatura da Zoey das Guerreiras K-Pop." class="gallery-img">
+                        <img src="assets/20251224_223845.jpg" alt="Zoey" class="gallery-img-content">
                     </div>
                 </a>
                  
-                  <!-- Shanks -->
-                <a href="shanks.html" class="card overflow-hidden p-0">
+                <!-- Shanks -->
+                <a href="shanks.html" class="card p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251224_224012.jpg" alt="Miniatura do Shanks de One Piece." class="gallery-img">
+                        <img src="assets/20251224_224012.jpg" alt="Shanks" class="gallery-img-content">
                     </div>
                 </a>
                  
-                  <!-- Pedro -->
-                <a href="pedro02.html" class="card overflow-hidden p-0">
+                <!-- Pedro -->
+                <a href="pedro02.html" class="card p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251130_151843.jpg" alt="Miniatura do Pedro, da coleção Netos do Demi" class="gallery-img">
+                        <img src="assets/20251130_151843.jpg" alt="Pedro" class="gallery-img-content">
                     </div>
                 </a>
                  
-                  <!-- Nina -->
-                <a href="nina.html" class="card overflow-hidden p-0">
+                <!-- Nina -->
+                <a href="nina.html" class="card p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251130_152401.jpg" alt="Miniatura da Nina, da coleção Netos do Demi" class="gallery-img">
+                        <img src="assets/20251130_152401.jpg" alt="Nina" class="gallery-img-content">
                     </div>
                 </a>
-                 
-                         
-                          
-          
-                 <!-- Link para ver o catálogo completo -->
-                <a href="catalogo.html" class="card overflow-hidden bg-blue-100 flex items-center justify-center p-4 text-center text-blue-800 font-semibold text-lg hover:bg-blue-200 transition-colors duration-300">
+
+                <!-- Link Catálogo -->
+                <a href="catalogo.html" class="card bg-blue-100 flex items-center justify-center p-4 text-center text-blue-800 font-semibold text-lg hover:bg-blue-200 transition-colors">
                     Catálogo Completo
                 </a>
-                                
+                                        
             </div>
         </section>
 
-             <!-- Placeholder onde o componente de contato será injetado -->
+        <!-- Placeholder do Contato -->
         <div id="contato-placeholder"></div>
 
     </main>
 
-    <!-- Footer -->
     <footer class="w-full text-center py-6 text-gray-500 text-sm">
         <p>Desenvolvido por Mateus Sposito. &copy; 2025</p>
     </footer>
 
-    <!-- Scripts -->
     <script src="contato-component.js"></script>
-
 </body>
 </html>
