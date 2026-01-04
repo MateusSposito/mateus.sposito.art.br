@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4PM6ZY3ZN"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-G4PM6ZY3ZN');
-    </script>
+
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4PM6ZY3ZN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G4PM6ZY3ZN');
+</script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,9 +23,8 @@
             background-color: #f0f2f5;
             color: #333;
         }
-        .container-max {
+        .container {
             max-width: 900px;
-            width: 100%;
         }
         .section-title {
             position: relative;
@@ -31,7 +32,6 @@
             font-weight: 700;
             color: #1a237e;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
         }
         .section-title::after {
             content: '';
@@ -53,10 +53,11 @@
             transform: translateY(-8px);
             box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
         }
+        /* Novo estilo de galeria para evitar cropping */
         .gallery-item-container {
             position: relative;
-            padding-top: 100%;
-            background-color: #e2e8f0;
+            padding-top: 100%; /* Cria um container quadrado (1:1 ratio) */
+            background-color: #e2e8f0; /* Fundo para áreas não preenchidas */
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s ease;
@@ -70,13 +71,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: contain; /* Ajusta a imagem dentro do container sem cortar */
             border-radius: 8px;
         }
     </style>
 </head>
-
-<body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
+    
+   <body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
 
     <!-- Header Section -->
     <header class="w-full flex justify-center py-6 mb-12">
@@ -84,7 +85,7 @@
             <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15v-5H8v5h3zm4-5h-3v5h3v-5zM12 5a2 2 0 012 2v2H10V7a2 2 0 012-2z"/>
             </svg>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 text-center">Mateus Sposito</h1>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900">Mateus Sposito</h1>
         </div>
     </header>
 
@@ -98,12 +99,12 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="container-max">
+    <main class="w-full container">
         
         <!-- Hero and About Section -->
         <section class="mb-16">
             <div class="card p-8 md:p-10 flex flex-col items-center">
-                <img src="assets/MateusPerfil.jpg" alt="Foto de Mateus Sposito" class="w-48 h-48 rounded-full mb-6 object-cover shadow-lg">
+                <img src="assets/MateusPerfil.jpg" alt="Foto de Mateus Sposito, artista de miniaturas" class="w-48 h-48 rounded-full mb-6 object-cover shadow-lg">
                 <p class="text-lg text-gray-700 leading-relaxed mb-6 text-center">
                     Da animação 3D ao toque artesanal em resina, minha jornada é uma fusão de tecnologia e arte.
                 </p>
@@ -112,60 +113,63 @@
 
         <!-- Gallery Section -->
         <section id="portfolio" class="mb-16">
-            <h2 class="section-title mb-10">Miniaturas Recentes</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h2 class="section-title text-center mb-10">Miniaturas Recentes</h2>
+            <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <!-- Tio Demi Turista -->
-                <a href="demi_turista.html" class="card p-0">
+                         <!-- Tio Demi Turista -->
+                <a href="demi_turista.html" class="card overflow-hidden p-0">
                     <div class="gallery-item-container">
                         <img src="assets/20260102_084244.jpg" alt="Tio Demi Turista" class="gallery-img">
                     </div>
                 </a>
                  
-                <!-- Tio Demi Cagando -->
-                <a href="demi_cagando.html" class="card p-0">
+                     <!-- Tio Demi Cagando -->
+                <a href="demi_cagando.html" class="card overflow-hidden p-0">
                     <div class="gallery-item-container">
                         <img src="assets/20251130_153443.jpg" alt="Tio Demi Cagando" class="gallery-img">
                     </div>
                 </a>
 
-                <!-- Zoey -->
-                <a href="zoey.html" class="card p-0">
+                  <!-- Zoey -->
+                <a href="zoey.html" class="card overflow-hidden p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251224_223845.jpg" alt="Zoey" class="gallery-img">
+                        <img src="assets/20251224_223845.jpg" alt="Miniatura da Zoey das Guerreiras K-Pop." class="gallery-img">
                     </div>
                 </a>
                  
-                <!-- Shanks -->
-                <a href="shanks.html" class="card p-0">
+                  <!-- Shanks -->
+                <a href="shanks.html" class="card overflow-hidden p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251224_224012.jpg" alt="Shanks" class="gallery-img">
+                        <img src="assets/20251224_224012.jpg" alt="Miniatura do Shanks de One Piece." class="gallery-img">
                     </div>
                 </a>
                  
-                <!-- Pedro -->
-                <a href="pedro02.html" class="card p-0">
+                  <!-- Pedro -->
+                <a href="pedro02.html" class="card overflow-hidden p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251130_151843.jpg" alt="Pedro" class="gallery-img">
+                        <img src="assets/20251130_151843.jpg" alt="Miniatura do Pedro, da coleção Netos do Demi" class="gallery-img">
                     </div>
                 </a>
                  
-                <!-- Nina -->
-                <a href="nina.html" class="card p-0">
+                  <!-- Nina -->
+                <a href="nina.html" class="card overflow-hidden p-0">
                     <div class="gallery-item-container">
-                        <img src="assets/20251130_152401.jpg" alt="Nina" class="gallery-img">
+                        <img src="assets/20251130_152401.jpg" alt="Miniatura da Nina, da coleção Netos do Demi" class="gallery-img">
                     </div>
                 </a>
-
-                <!-- Link Catálogo -->
-                <a href="catalogo.html" class="card bg-blue-100 flex items-center justify-center p-4 text-center text-blue-800 font-semibold text-lg hover:bg-blue-200 transition-colors">
+                 
+                         
+                          
+          
+                 <!-- Link para ver o catálogo completo -->
+                <a href="catalogo.html" class="card overflow-hidden bg-blue-100 flex items-center justify-center p-4 text-center text-blue-800 font-semibold text-lg hover:bg-blue-200 transition-colors duration-300">
                     Catálogo Completo
                 </a>
-                                        
+                                
             </div>
         </section>
 
-        <!-- Placeholder onde o componente de contato será injetado -->
+             <!-- Placeholder onde o componente de contato será injetado -->
         <div id="contato-placeholder"></div>
 
     </main>
@@ -177,5 +181,6 @@
 
     <!-- Scripts -->
     <script src="contato-component.js"></script>
+
 </body>
 </html>
