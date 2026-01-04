@@ -28,7 +28,8 @@ function renderContato() {
                         
                         <!-- Mercado Livre -->
                         <a href="https://lista.mercadolivre.com.br/_CustId_3092494021?item_id=MLB6106482676&category_id=MLB412060&seller_id=3092494021&client=recoview-selleritems&recos_listing=true#origin=vip&component=sellerData&typeSeller=classic">
-                        class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md w-full sm:w-auto">
+                        target="_blank" 
+                           class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md w-full sm:w-auto">
                             Mercado Livre
                         </a>
                         
