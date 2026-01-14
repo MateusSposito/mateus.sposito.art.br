@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4PM6ZY3ZN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G4PM6ZY3ZN');
+</script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urubatan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+        }
+        /* Estilo do título de seção padrão */
+        .section-title {
+            position: relative;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a237e; /* Azul Escuro */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #ffc107; /* Amarelo/Ouro */
+            margin: 8px auto 0; /* Centraliza a linha e ajusta a margem superior */
+            border-radius: 2px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        /* Estilo para as miniaturas na galeria */
+        .gallery-item-container {
+            position: relative;
+            padding-top: 100%; /* Mantém a proporção 1:1 */
+            background-color: #e2e8f0; 
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .gallery-item-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Garante que a imagem inteira seja vista, sem crop */
+            transition: transform 0.3s ease;
+        }
+        .gallery-item-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center p-8 md:p-12">
+
+    <!-- Header Section (Padrão) -->
+    <header class="w-full flex justify-center py-6 mb-12">
+        <div class="flex items-center space-x-4">
+            <!-- Ícone -->
+            <svg class="w-12 h-12 text-blue-800" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 15v-5H8v5h3zm4-5h-3v5h3v-5zM12 5a2 2 0 012 2v2H10V7a2 2 0 012-2z"/>
+            </svg>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900">Mateus Sposito</h1>
+        </div>
+    </header>
+
+    <!-- Navigation (Padrão) -->
+    <nav class="w-full flex justify-center mb-10">
+        <div class="flex space-x-6 text-xl">
+            <a href="index.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Início</a>
+            <a href="catalogo.html" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Catálogo</a>
+            <a href="personagens.html" class="text-blue-800 font-semibold border-b-2 border-blue-800 pb-1">Personagens</a>
+            <a href="#contato" class="text-gray-700 hover:text-blue-800 hover:border-b-2 hover:border-blue-800 pb-1 transition-colors">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="w-full container">
+        
+        <!-- Botão de Voltar -->
+        <div class="mb-8">
+            <a href="personagens.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-semibold">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Voltar para Persoangens
+            </a>
+        </div>
+        
+        <!-- Obra Details Section -->
+        <section class="mb-16">
+            <div class="card p-8 md:p-10 text-center">
+                <!-- Título -->
+                <h2 class="section-title text-center mb-8">Urubatan</h2>
+                
+                <!-- Descrição da Peça -->
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Esta escultura de 24cm é uma representação que faz jus à importância e à força do Caboclo Urubatan. Diferente de peças decorativas leves, esta é uma obra robusta e pesada, desenvolvida para quem busca uma imagem com presença e fundamento.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Essa foi a peça à qual dediquei mais tempo até agora. Foram vários meses no computador e nas bancadas de trabalho: fazendo, amadurecendo as ideias e refazendo. Também refiz algumas partes com materiais de diferentes densidades e resistências até chegar ao padrão que queria para esta escultura.
+                </p>
+               <p class="text-lg text-gray-700 leading-relaxed mb-6">
+    Gostou dessa peça? Compre com segurança pelo <a href="https://produto.mercadolivre.com.br/MLB-4419938915" target="_blank" class="text-blue-600 hover:underline font-semibold">Mercado Livre</a>!
+</p>
+
+                <!-- Dados Técnicos -->
+                <div class="my-8 text-left max-w-lg mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Detalhes Técnicos</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><span class="font-semibold text-blue-700">Medidas:</span> 24cm de altura</li>
+                        <li><span class="font-semibold text-blue-700">Peso:</span> 475g</li>
+                        <li><span class="font-semibold text-blue-700">Material:</span> Resina UV, resina poliéster e calcita</li>
+                        <li><span class="font-semibold text-blue-700">Acabamento:</span> Tinta acrílica e verniz seletivo</li>
+                    </ul>
+                </div>
+                
+                <!-- Galeria de Fotos (Em ordem cronológica e usando os nomes dos arquivos enviados) -->
+                <h3 class="text-2xl font-bold text-gray-800 mt-12 mb-6">Processo de Criação (Setembro de 2025 à Janeiro de 2026)</h3>
+                <div class="gallery grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                    
+                    <!-- 1. Foto 01 -->
+                    <a href="assets/20250925_181511.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20250925_181511.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Agosto%20-%20Rascunho%20Inicial';" alt="Saindo da Impressora.">
+                    </a>
+
+                    <!-- 2. Foto 02 -->
+                    <a href="assets/20250925_205344.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20250925_205344.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Outubro%20-%20Detalhes%20no%20Rosto';" alt="Primeira impressão já montada.">
+                    </a>
+                    
+                    <!-- 3. Foto 03 -->
+                    <a href="assets/20251021_200608.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20251021_200608.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Outubro%20-%20Pintura%20Base';" alt="Iniciando a pintura.">
+                    </a>
+                                        
+                    <!-- 5. Foto 05 -->
+                    <a href="assets/20260104_161615.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20260104_161615.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Novembro%20-%20Quase%20Pronta';" alt="Trocando o cacar por um de resina mais resistente.">
+                    </a>
+                    
+                    <!-- 6. Foto 06 -->
+                    <a href="assets/20260106_110148.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20260106_110148.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Novembro%20-%20Peça%20Finalizada';" alt="Cocar trocado e pronto pra voltar a lixar.">
+                    </a>
+
+                  <!-- 7. Foto 07 -->
+                    <a href="assets/20260114_142208.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20260114_142208.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Novembro%20-%20Peça%20Finalizada';" alt="Caboclo Urubatã pronto!">
+                    </a>
+
+                  <!-- 8. Foto 08 -->
+                    <a href="assets/20260114_142309.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20260114_142309.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Novembro%20-%20Peça%20Finalizada';" alt="Perfil esquerdo do Urubatã.">
+                    </a>
+
+                  <!-- 9. Foto 09 -->
+                    <a href="assets/20260114_142332.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20260114_142332.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Novembro%20-%20Peça%20Finalizada';" alt="Urubatan de costas.">
+                    </a>
+
+                  <!-- 10. Foto 10 -->
+                    <a href="assets/20260114_142343.jpg" target="_blank" class="card gallery-item-container">
+                        <img src="assets/20260114_142343.jpg" onerror="this.src='https://placehold.co/400x400/CCCCCC/333333?text=Novembro%20-%20Peça%20Finalizada';" alt="Perfil direito do Urubatan.">
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+       <!-- Placeholder do Contato -->
+        <div id="contato-placeholder"></div>
+
+    </main>
+
+    <footer class="w-full text-center py-6 text-gray-500 text-sm">
+        <p>Desenvolvido por Mateus Sposito. &copy; 2026</p>
+    </footer>
+
+    <script src="contato-component.js"></script>
+
+</body>
+</html>
