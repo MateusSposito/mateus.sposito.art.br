@@ -27,7 +27,7 @@ function renderContato() {
                     <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                         
                         <!-- Mercado Livre -->
-                        <a href="https://lista.mercadolivre.com.br/_CustId_3092494021" 
+                        <a href="https://www.mercadolivre.com.br/pagina/spositoartbr#from=share_eshop" 
                            target="_blank" 
                            class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-md w-full sm:w-auto">
                             Mercado Livre
