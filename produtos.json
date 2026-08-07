@@ -1,0 +1,64 @@
+{
+  "produtos": {
+    "chaveiro-batman": {
+      "nome": "Chaveiro do Batman",
+      "categoria": "Chaveiros",
+      "link_categoria": "chaveiros.html",
+      "descricao": [
+        "Um dos primeiros chaveiros que fiz, inspirado no Cavaleiro das Trevas. A ideia era capturar a essência do personagem em miniatura, mantendo os detalhes icônicos como o símbolo no peito e a capa.",
+        "Fiz três tentativas até chegar nessa versão final. A primeira ficou muito pequena, a segunda tive problemas com a tinta preta na resina, mas a terceira ficou perfeita."
+      ],
+      "ficha_tecnica": {
+        "medidas": "4cm de altura",
+        "material": "Resina UV",
+        "acabamento": "Tinta acrílica e verniz brilhante"
+      },
+      "fotos": [
+        "assets/chaveiro-batman-01.jpg",
+        "assets/chaveiro-batman-02.jpg",
+        "assets/chaveiro-batman-03.jpg"
+      ],
+      "video": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    },
+    "chaveiro-shanks": {
+      "nome": "Chaveiro do Shanks",
+      "categoria": "Chaveiros",
+      "link_categoria": "chaveiros.html",
+      "descricao": [
+        "O ruivo mais carismático dos mares! Fã de One Piece há anos, resolvi fazer uma homenagem ao capitão dos Ruivos.",
+        "O desafio aqui foi pintar os três olhos cicatrizados de forma que ficasse reconhecível mesmo em miniatura."
+      ],
+      "ficha_tecnica": {
+        "medidas": "4,5cm de altura",
+        "material": "Resina UV",
+        "acabamento": "Tinta acrílica e verniz fosco"
+      },
+      "fotos": [
+        "assets/chaveiro-shanks-01.jpg",
+        "assets/chaveiro-shanks-02.jpg"
+      ],
+      "video": null
+    },
+    "regina": {
+      "nome": "Regina",
+      "categoria": "Caricaturas",
+      "link_categoria": "caricaturas.html",
+      "descricao": [
+        "Mais uma com um peso afetivo gigantesco. Minha esposa Regina, que está sempre comigo nessa montanha russa da vida.",
+        "Iniciada em dezembro de 2025 e finalizada em fevereiro de 2026, quando fui olhando as tatuagens originais e desenhando na miniatura. Essa foi a segunda tentativa. A primeira, eu achei que tinha ficado menor do que eu queria e está até hoje na minha bancada de trabalho, me olhando com essa carinha boa."
+      ],
+      "ficha_tecnica": {
+        "medidas": "10cm de altura",
+        "material": "Resina UV",
+        "acabamento": "Tinta e verniz acrílico"
+      },
+      "fotos": [
+        "assets/20260102_094139.jpg",
+        "assets/20260121_195129.jpg",
+        "assets/20260126_152846.jpg",
+        "assets/20260218_165722.jpg"
+      ],
+      "video": null
+    }
+  }
+}
