@@ -1,5 +1,33 @@
 {
   "produtos": {
+    "dachshund": {
+      "nome": "Chaveiro Dachshund",
+      "categoria": "Chaveiros",
+      "link_categoria": "chaveiros.html",
+      "descricao": [
+        "O chaveiro do Dachshund foi um dos mais pedidos quando comecei a fazer os chaveiros pet",
+        "Inicialmente fiz as varições mais comuns: preto e canela, marrom e arlequim. Depois vieram os pedidos personalizados e criei essa variação `personalizada´ em que você pode enviar as fotos do seu salsichinha e eu faço a pintura igual."
+      ],
+      "ficha_tecnica": {
+        "medidas": "5cm de altura e 36g",
+        "material": "Resina maciça com argola italiana e mosquetão premium",
+        "acabamento": "Pintura acrílica com verniz seletivo (brilhante nos olhos e focinho, fosco no resto) e tag Sposito Art"
+      },
+      "fotos": [
+        "assets/chaveiros/dachshund/dachshund-1.jpg",
+        "assets/chaveiros/dachshund/dachshund-2.jpg",
+        "assets/chaveiros/dachshund/dachshund-3.jpg",
+        "assets/chaveiros/dachshund/dachshund-4.jpg",
+        "assets/chaveiros/dachshund/dachshund-5.jpg",
+        "assets/chaveiros/dachshund/dachshund-6.jpg",
+        "assets/chaveiros/dachshund/dachshund-7.jpg",
+        "assets/chaveiros/dachshund/dachshund-8.jpg",
+        "assets/chaveiros/dachshund/dachshund-9.jpg",
+        "assets/chaveiros/dachshund/dachshund-10.jpg",
+      ],
+      "video": "https://youtube.com/shorts/HICi9zhrNyc",
+      "link_venda": "https://www.mercadolivre.com.br/chaveiro-dachshund-salsicha-5cm-resina-macica-pintado-a-mao/up/MLBU3924719557"
+    },
     "corgi": {
       "nome": "Chaveiro Corgi Julgador",
       "categoria": "Chaveiros",
