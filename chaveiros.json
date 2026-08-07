@@ -1,5 +1,10 @@
 [
   {
+    "pagina": "produto.html?id=corgi",
+    "imagem": "assets/chaveiros/corgi/corgi-1.jpg",
+    "descricao": "Chaveiro Corgi Julgador em resina maciça"
+  },
+  {
     "pagina": "produto.html?id=calopsita",
     "imagem": "assets/chaveiros/calopsita/calopsita-padrao-1.jpg",
     "descricao": "Chaveiro de Calopsita em resina maciça"
