@@ -1,12 +1,7 @@
 [
   {
-    "pagina": "chaveiro-batman.html",
-    "imagem": "assets/chaveiro-batman.jpg",
-    "descricao": "Chaveiro artesanal em resina do Batman"
-  },
-  {
-    "pagina": "chaveiro-shanks.html",
-    "imagem": "assets/chaveiro-shanks.jpg",
-    "descricao": "Chaveiro artesanal do Shanks de One Piece"
+    "pagina": "produto.html?id=calopsita",
+    "imagem": "assets/chaveiros/calopsita/calopsita-padrao-1.jpg",
+    "descricao": "Chaveiro de Calopsita em resina maciça"
   }
 ]
