@@ -1,5 +1,32 @@
 {
   "produtos": {
+    "corgi": {
+      "nome": "Chaveiro Corgi Julgador",
+      "categoria": "Chaveiros",
+      "link_categoria": "chaveiros.html",
+      "descricao": [
+        "Esse chaveiro nasceu de um dos memes mais amados da internet: o Corgi Julgador, com aquela expressão de quem está avaliando todas as suas decisões.",
+        "Reproduzi a expressão icônica do meme em resina maciça, com verniz seletivo — brilhante nos olhos e no focinho pra dar vida à peça, e fosco no restante do corpo.",
+        "Perfeito pra quem quer um companheiro de bancada pra julgar o dia a dia com muito estilo. 😏"
+      ],
+      "ficha_tecnica": {
+        "medidas": "5cm de altura e 51g",
+        "material": "Resina maciça com argola italiana e mosquetão premium",
+        "acabamento": "Pintura acrílica com verniz seletivo (brilhante nos olhos e focinho, fosco no resto) e tag Sposito Art"
+      },
+      "fotos": [
+        "assets/chaveiros/corgi/corgi-1.jpg",
+        "assets/chaveiros/corgi/corgi-2.jpg",
+        "assets/chaveiros/corgi/corgi-3.jpg",
+        "assets/chaveiros/corgi/corgi-4.jpg",
+        "assets/chaveiros/corgi/corgi-5.jpg",
+        "assets/chaveiros/corgi/corgi-6.jpg",
+        "assets/chaveiros/corgi/corgi-7.jpg",
+        "assets/chaveiros/corgi/corgi-8.jpg"
+      ],
+      "video": "https://www.youtube.com/embed/AJgM2G4aEzk",
+      "link_venda": "https://www.mercadolivre.com.br/chaveiro-corgi-meme-julgador-5cm-resina-macica-premium-51g/up/MLBU4034753287"
+    },
     "calopsita": {
       "nome": "Chaveiro de Calopsita",
       "categoria": "Chaveiros",
