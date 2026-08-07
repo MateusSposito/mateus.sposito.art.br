@@ -59,6 +59,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
             `;
             
+            // Adiciona botão de compra se existir link_venda
+            if (produto.link_venda) {
+                html += `
+                    <div class="my-10">
+                        <a href="${produto.link_venda}" target="_blank" rel="noopener noreferrer" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold text-xl py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+                            🛒 Comprar no Mercado Livre
+                        </a>
+                    </div>
+                `;
+            }
+            
             // Adiciona vídeo se existir
             if (produto.video) {
                 html += `
