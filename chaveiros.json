@@ -1,4 +1,9 @@
 [
+ {
+    "pagina": "produto.html?id=dachshund",
+    "imagem": "assets/chaveiros/dachshund/dachshund-4.jpg",
+    "descricao": "Chaveiro Dachshund em resina maciça"
+  },
   {
     "pagina": "produto.html?id=corgi",
     "imagem": "assets/chaveiros/corgi/corgi-1.jpg",
